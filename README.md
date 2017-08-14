@@ -1,5 +1,5 @@
 # Architecture
-Integration Service and Data Hub
+Integration Service and Data Hub [Franz]
 
 ## Open Questions
 ...
