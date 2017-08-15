@@ -1,6 +1,10 @@
 # Architecture
 AP 2.10 - Integration Service and Data Hub [Franz]
 
+![DependencyDraft](https://github.com/OpenIntegrationHub/Architecture/blob/master/DependencyDraft.png)
+
+[11.08.17 - MeetingMinutes by Franz](https://github.com/OpenIntegrationHub/Architecture/wiki/MeetingMinutes)
+
 ## Open Questions
 ...
 * Which Datastores come into consideration for a MDM system?
