@@ -3,6 +3,16 @@ AP 2.10 - Integration Service and Data Hub [Franz]
 
 ## Open Questions
 ...
+* Which Datastores come into consideration for a MDM system?
+* * Comparison, Battle proven
+* * If we were to use MongoDB, how do we tackle transactions? Two phase commits?
+* * Versioning? Eventsourcing?
+
+* Data Model
+* * Do we want a shared generic data modell (shared library?) across services?
+
+* Project scaffolding
+* * Create a default project structure containing e.g. source code, k8s config, Jenkinsfile, Dockerfile, Docs, etc.
 
 ## Obstacles
 ...
