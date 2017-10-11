@@ -1,29 +1,15 @@
-# Architecture
-AP 2.10 - Integration Service and Data Hub [Franz]
+# Committee of architecture - core members
+**Mention the team** @openintegrationhub/architecture-committee
 
-![DependencyDraft](https://github.com/OpenIntegrationHub/Architecture/blob/master/DependencyDraft.png)
+![Commitee of Architecture](CoA.png)
 
-[11.08.17 - MeetingMinutes by Franz](https://github.com/OpenIntegrationHub/Architecture/wiki/MeetingMinutes)
+# Fridays stand-ups at 9 am
+1. Your **Results**
+2. Your **Goals**
+3. Your **Obstacles**
 
-## Open Questions
-...
-* Which Datastores come into consideration for a MDM system?
-* * Comparison, Battle proven
-* * If we were to use MongoDB, how do we tackle transactions? Two phase commits?
-* * Versioning? Eventsourcing?
+Join our meeting with a computer, tablet or smartphone https://global.gotomeeting.com/join/532522405 
 
-* Data Model
-* * Do we want a shared generic data modell (shared library?) across services?
+and even with a classic phone +49 692 5736 7317
 
-* Project scaffolding
-* * Create a default project structure containing e.g. source code, k8s config, Jenkinsfile, Dockerfile, Docs, etc.
-
-## Obstacles
-...
-
-## Dependencies
-* AP 2.08 - Conception Integration Service [Igor]
-  > ...
-* AP 2.09 - Conception Data Hub & Standardization Data Model [Renat]
-  > ...
-
+**Access code:** 532-522-405 
