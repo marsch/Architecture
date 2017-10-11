@@ -15,11 +15,16 @@ As a business user I would like to keep contact data between CRM, ERP and e-mail
 I could communicate with my customers via multiple channels (direct calls, e-mail spam, etc.) and grow my revenues
 with it.
 
+![overview](https://raw.githubusercontent.com/openintegrationhub/architecture/master/images/overview.png)
+
 ## Assumptions
 
 ### A1
 We assume all customers agree to use their PII for communication and store/transfer it to the systems above 
-(ERP, CRM, Marketing)
+(ERP, CRM, Marketing).
+
+### A2
+Only contact data is kept in sync, no other type of customer data is synchornized.
 
 ## Implementation
 
