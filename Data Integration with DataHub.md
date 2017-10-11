@@ -5,10 +5,23 @@
 This document will summarize the design suggestion for [data synchronization](https://en.wikipedia.org/wiki/Data_synchronization)
 scenario using DataHub (aka. Smart Data Framework).
 
-Usage of 
+Usage of Data Hub will be demonstrated based on the example integration scenario where we should
+keep the contact data between [Wice CRM](http://wice.de), [Silver ERP](http://www.silvererp.com/) and 
+[Mailchimp](https://mailchimp.com) in sync.
 
-## Demo scenario
+## User story
 
+As a business user I would like to keep contact data between CRM, ERP and e-mail marketing programm in sync so that
+I could communicate with my customers via multiple channels (direct calls, e-mail spam, etc.) and grow my revenues
+with it.
+
+## Assumptions
+
+### A1
+We assume all customers agree to use their PII for communication and store/transfer it to the systems above 
+(ERP, CRM, Marketing)
+
+## Implementation
 
 
 ## Known limitations
