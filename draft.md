@@ -1,7 +1,7 @@
 # Architecture
 AP 2.10 - Integration Service and Data Hub [Franz]
 
-![DependencyDraft](https://github.com/OpenIntegrationHub/Architecture/blob/master/DependencyDraft.png)
+![DependencyDraft](images/DependencyDraft.png)
 
 [11.08.17 - MeetingMinutes by Franz](https://github.com/OpenIntegrationHub/Architecture/wiki/MeetingMinutes)
 
