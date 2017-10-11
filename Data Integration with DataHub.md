@@ -30,7 +30,7 @@ Only contact data is kept in sync, no other type of customer data is synchornize
 
 Following diagram represents a graphical schema of the described solution:
 
-![solution](https://raw.githubusercontent.com/openintegrationhub/architecture/master/images/solution.png)
+![solution](https://raw.githubusercontent.com/openintegrationhub/architecture/master/images/Solution.png)
 
 ## Known limitations
 
