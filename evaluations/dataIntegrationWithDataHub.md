@@ -21,7 +21,7 @@ with it.
 
 ### A1
 We assume all customers agree to use their PII for communication and store/transfer it to the systems above
-(``).
+(ERP, CRM, Marketing).
 
 ### A2
 Only contact data is kept in sync, no other type of customer data is synchronized.
