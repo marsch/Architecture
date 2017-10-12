@@ -15,7 +15,7 @@ As a business user I would like to keep contact data between CRM, ERP and e-mail
 I could communicate with my customers via multiple channels (direct calls, e-mail spam, etc.) and grow my revenues
 with it.
 
-![overview](images/overview.png)
+![overview](https://github.com/openintegrationhub/architecture/blob/master/images/overview.png)
 
 ## Assumptions
 
@@ -30,7 +30,7 @@ Only contact data is kept in sync, no other type of customer data is synchronize
 
 Following diagram represents a graphical schema of the described solution:
 
-![solution](images/Solution.png)
+![solution](https://github.com/openintegrationhub/architecture/blob/master/images/Solution.png)
 
 The diagram above demonstrates that all the communication goes through the central `Data Hub`. Instead of talking to
 each other each of the services is connected to `Data Hub` via an integration directly. The integration is provided
@@ -74,6 +74,6 @@ In the ideal world advantages of the
 [hub-and-spoke](https://en.wikipedia.org/wiki/Spoke%E2%80%93hub_distribution_paradigm)
 architecture (hence usage of DataHub) only exist when synchronizing data between more than two systems
 (this conclusion can easily be proved with complexity calculation of the graph interconnectivity).
-However in the real world most of the times systems where data should be synchornized rarely provide
-sufficient functionality in their APIs that would enable practicle, reliable and performant data synchornization
+However in the real world most of the times systems where data should be synchronized rarely provide
+sufficient functionality in their APIs that would enable practical, reliable and performant data synchronization
 even between two systems.

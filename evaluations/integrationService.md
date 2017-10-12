@@ -1,22 +1,22 @@
 # Architecture
 AP 2.10 - Integration Service and Data Hub [Franz]
 
-![DependencyDraft](images/DependencyDraft.png)
+![DependencyDraft](images/dependencyDraft.png)
 
 [11.08.17 - MeetingMinutes by Franz](https://github.com/OpenIntegrationHub/Architecture/wiki/MeetingMinutes)
 
 ## Open Questions
 ...
-* Which Datastores come into consideration for a MDM system?
+* Which Data stores come into consideration for a MDM system?
 * * Comparison, Battle proven
 * * If we were to use MongoDB, how do we tackle transactions? Two phase commits?
-* * Versioning? Eventsourcing?
+* * Versioning? Event sourcing?
 
 * Data Model
-* * Do we want a shared generic data modell (shared library?) across services?
+* * Do we want a shared generic data model (shared library?) across services?
 
 * Project scaffolding
-* * Create a default project structure containing e.g. source code, k8s config, Jenkinsfile, Dockerfile, Docs, etc.
+* * Create a default project structure containing e.g. source code, k8s config, Jenkins file, Docker file, Docs, etc.
 
 ## Obstacles
 ...
