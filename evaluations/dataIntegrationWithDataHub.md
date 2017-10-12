@@ -32,6 +32,34 @@ Following diagram represents a graphical schema of the described solution:
 
 ![solution](https://github.com/openintegrationhub/architecture/blob/master/images/Solution.png)
 
+The diagram above demonstrates that all the communication goes through the central `Data Hub`. Instead of talking to
+each other each of the services is connected to `Data Hub` via an integration directly. The integration is provided
+by the `Integration Hub`.
+
+The `Integration Hub` provides an integration component to communicate with the `Data Hub`. The component consists of:
+
+* trigger: used to export data from `Data Hub`
+* action: used to import data into `Data Hub`
+
+The data are imported into the `Data Hub` as they come in *raw* format, without any transformation or aggregation. In
+the example above this would mean that for each of the services (CRM, ERP and e-mail marketing) a separated collection
+of raw data is maintained per tenant. Any updates (new objects, changes to objects and removal of objects) from these
+systems are done on the raw data collections.
+
+Additionally to the raw collections a collection per integration scenario is maintained to persist the results of
+transformation of the raw data into a common model of an integration scenario. The common model is described as a set
+of transformation rules (mapping expressions) that are applied on raw data. A scheduled job detects any changes to the
+raw data collections, performs the transformation and stores the result into the common model collection.
+
+The advantages of raw data storage are:
+
+* any changes to a common model can be easily applied by re-evaluating the transformation rules on the raw data
+* it is easy to introduce new integration scenarios without re-importing all the data again. Only a new set of
+transformation rules for the common model in the given scenario is required.
+
+A common model between these 3 systems is described as a set of transformation rules (mapping expressions) that are
+applied on raw data. A scheduled job is detecting changes to the raw data collections and
+
 ## Known limitations
 
 ### Lim1
