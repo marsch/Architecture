@@ -11,11 +11,11 @@ keep the contact data between [Wice CRM](http://wice.de), [Silver ERP](http://ww
 
 ## User story
 
-As a business user I would like to keep contact data between CRM, ERP and e-mail marketing programm in sync so that
+As a business user I would like to keep contact data between CRM, ERP and e-mail marketing program in sync so that
 I could communicate with my customers via multiple channels (direct calls, e-mail spam, etc.) and grow my revenues
 with it.
 
-![overview](images/overview.png)
+![overview](https://github.com/openintegrationhub/architecture/blob/master/images/overview.png)
 
 ## Assumptions
 
@@ -24,13 +24,13 @@ We assume all customers agree to use their PII for communication and store/trans
 (ERP, CRM, Marketing).
 
 ### A2
-Only contact data is kept in sync, no other type of customer data is synchornized.
+Only contact data is kept in sync, no other type of customer data is synchronized.
 
 ## Implementation
 
 Following diagram represents a graphical schema of the described solution:
 
-![solution](images/Solution.png)
+![solution](https://github.com/openintegrationhub/architecture/raw/master/images/solution.png)
 
 ## Known limitations
 
@@ -44,8 +44,8 @@ as the use-case for describing all of the the OIH application scenarios.
 ### Lim2
 In the ideal world advantages of the
 [hub-and-spoke](https://en.wikipedia.org/wiki/Spoke%E2%80%93hub_distribution_paradigm)
-architecture (hence usage of DataHub) only exist when synchornizing data between more than two systems
+architecture (hence usage of DataHub) only exist when synchronizing data between more than two systems
 (this conclusion can easily be proved with complexity calculation of the graph interconnectivity).
-However in the real world most of the times systems where data should be synchornized rarely provide
-sufficient functionality in their APIs that would enable practicle, reliable and performant data synchornization
+However in the real world most of the times systems where data should be synchronized rarely provide
+sufficient functionality in their APIs that would enable practical, reliable and performant data synchronization
 even between two systems.
