@@ -1,7 +1,7 @@
 # Committee of architecture - core members
 **Mention the team** @openintegrationhub/architecture-committee
 
-![Committee of Architecture](images/CoA.png)
+![Committee of Architecture](images/CoA_core_member.svg)
 
 # Decision making process
 
