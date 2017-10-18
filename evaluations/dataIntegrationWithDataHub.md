@@ -105,3 +105,21 @@ architecture (hence usage of DataHub) only exist when synchronizing data between
 However in the real world most of the times systems where data should be synchronized rarely provide
 sufficient functionality in their APIs that would enable practical, reliable and performant data synchronization
 even between two systems.
+
+## Open Questions
+
+### Q1
+
+How `DataHub` would handle the partent-child relationships. For example in some CRM systems (e.g. Salesforce) we have 
+objects like `Account` (e.g. Fox Interactive Inc. with name, address, and many other fiels) and `Contact` 
+(e.g. Homer Simpson with fileds like first,last name, phone number, etc.), both of these objects have distinct internal IDs
+and parent-child relationship between them (via foreign key on `Contact`). 
+In e-mail marketing system (e.g. Mailchimp) we have a `Subscriber` object with
+fields like first,last names, e-mail as well as company name. `Subscriber` also has a distinct internal ID, however 
+data transformation between these objects would need to map multiple objects IDs into one (Salseforce -> Mailchimp) and
+back (Mailchimp->Salesfroce).
+
+### Q2
+
+How conflict resolution should work? In case we have changes of the data from two systems that are conflicting. 
+Such conflict could happen on the object but also on the field level.
