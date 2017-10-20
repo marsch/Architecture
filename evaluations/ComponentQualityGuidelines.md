@@ -59,12 +59,12 @@ the message body.  The name of the trigger for the `Customer` object should be
 
 **Webhooks** will get updates for objects as they happen as well as for objects
 as they are created.  There should be one message per persisted change.  The
-entire object should be emitted ast he message body.
+entire object should be emitted as the message body.
 
 #### Object Deletion
 This handles the case when an object is deleted.
 
-Generally, polling triggers will not be able to detect this event.
+Generally, **polling triggers** will not be able to detect this event.
 
 **Webhooks** should emit an event with the `id` of the object that was deleted.
 
@@ -100,7 +100,7 @@ Example names: `calculateBundeslandFromPostalCode`, `getOrderById`
 
 #### Upsert Object
 Given an object that exists in `other` system, create an object in `this`
-system.  See **ID Linking** for a definition of corresponding object.  If no
+system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/ComponentQualityGuidelines.md#id-linking) for a definition of corresponding object.  If no
 corresponding object exist, this action should do an insert action.  The
 component should emit the state of the object after the update/insert.
 
@@ -108,7 +108,7 @@ Example Name: `upsertCustomer`
 
 #### Delete Object
 Given an incoming message with an id, delete the corresponding object in the
-system.  See **ID Linking** for a definition of corresponding object.
+system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/ComponentQualityGuidelines.md#id-linking) for a definition of corresponding object.
 
 Example name: `deleteCustomer`
 
@@ -147,7 +147,7 @@ operation is required.  `isNew` as metadata could be useful.
   * See **OIH** for implementation.
 
 ## TODOS
-- APIs with automatic object discovery
+- APIs with automatic object and field discovery
 - Define any standardized metadata information that should be calculated and
 added to the outbound message by the component.  (E.g. `isNew`, `timeOfEvent`,
 standardized `id` field, etc)
