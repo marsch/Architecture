@@ -145,6 +145,33 @@ operation is required.  `isNew` as metadata could be useful.
  this information was previously fetched from a master data system.
   * See **OIH** for implementation.
 
+## Handling API Limits
+
+### Intial Data Fetch
+
+_Question_: How can we avoid to run into an API Limit while initially fetching all data using **Polling Triggers**?<br>
+
+_Proposal_: Paging? (Please reformulate)
+
+_Question_: How can we initially fetch all data while using **WebHooks**? (Maybe this topic has to be relocated in this file)<br>
+
+_Proposal_: -
+
+_Question_: How can we avoid to run into an API Limit while initially fetching all data using **Webhooks**?<br>
+
+_Proposal_: -
+
+### Object Update
+
+_Question:_ How to handle updates for **polling triggers**?<br>
+
+_Proposal_: -
+
+_Question:_ How to handle updates for **Webhooks**?<br>
+
+_Proposal:_ As **Webhooks** automatically emit an event with the id of the object that was, API limit handling is not needed. (Please Reformulate)
+
+
 ## TODOS
 - APIs with automatic object and field discovery
 - Define any standardized metadata information that should be calculated and
