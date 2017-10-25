@@ -65,11 +65,11 @@ entire object should be emitted as the message body.
 =======
 #### Object Deletion
 This handles the case when an object is deleted.
- 
+
 Generally, **polling triggers** will not be able to detect this event.
 
 **Webhooks** should emit an event with the `id` of the object that was deleted.
- 
+
 
 >>>>>>> parent of e70f9a9... Revert change
 #### Object Move
