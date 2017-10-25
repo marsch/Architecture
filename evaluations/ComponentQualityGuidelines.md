@@ -61,6 +61,14 @@ the message body.  The name of the trigger for the `Customer` object should be
 as they are created.  There should be one message per persisted change.  The
 entire object should be emitted as the message body.
 
+#### Object Deletion
+This handles the case when an object is deleted.
+ 
+Generally, **polling triggers** will not be able to detect this event.
+
+**Webhooks** should emit an event with the `id` of the object that was deleted.
+ 
+
 #### Object Move
 The id or location of an object changes.  TBD.
 
@@ -100,12 +108,6 @@ component should emit the state of the object after the update/insert.
 Example Name: `upsertCustomer`
 
 #### Delete Object
-This handles the case when an object is deleted.
-
-Generally, **polling triggers** will not be able to detect this event.
-
-**Webhooks** should emit an event with the `id` of the object that was deleted.
-
 Given an incoming message with an id, delete the corresponding object in the
 system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/ComponentQualityGuidelines.md#id-linking) for a definition of corresponding object.
 
