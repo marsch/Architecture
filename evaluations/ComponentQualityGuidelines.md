@@ -68,6 +68,7 @@ Generally, **polling triggers** will not be able to detect this event.
 
 **Webhooks** should emit an event with the `id` of the object that was deleted.
  
+
 #### Object Move
 The id or location of an object changes.  TBD.
 
