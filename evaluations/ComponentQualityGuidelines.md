@@ -1,6 +1,6 @@
-# Quality guidelines for integration components
+# Quality Guidelines for Integration Components
 
-## Component description and documentation guidelines
+## Component Description and Documentation Duidelines
 
 Component repository should have following in it:
 1. Logo - 128x128 PNG file with transparent background
@@ -32,7 +32,7 @@ Component repository should have following in it:
 1. License file
 1. Changelog
 
-## Semantic convention for API-Component mapping
+## Semantic Convention for API-Component Mapping
 
 It is important to define common rules on how an integration component respond
 to and perform actions on generic actions on a domain object.
@@ -171,6 +171,9 @@ _Question:_ How to handle updates for **Webhooks**?<br>
 
 _Proposal:_ As **Webhooks** automatically emit an event with the id of the object that was, API limit handling is not needed. (Please Reformulate)
 
+_Question:_ How to handle object changes in systems, without a change tracking?<br>
+
+_Proposal:_ Implementation of a changelog is needed
 
 ## TODOS
 - APIs with automatic object and field discovery
