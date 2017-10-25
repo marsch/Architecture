@@ -61,6 +61,17 @@ the message body.  The name of the trigger for the `Customer` object should be
 as they are created.  There should be one message per persisted change.  The
 entire object should be emitted as the message body.
 
+<<<<<<< HEAD
+=======
+#### Object Deletion
+This handles the case when an object is deleted.
+ 
+Generally, **polling triggers** will not be able to detect this event.
+
+**Webhooks** should emit an event with the `id` of the object that was deleted.
+ 
+
+>>>>>>> parent of e70f9a9... Revert change
 #### Object Move
 The id or location of an object changes.  TBD.
 
