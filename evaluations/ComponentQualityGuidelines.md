@@ -1,6 +1,6 @@
 # Quality Guidelines for Integration Components
 
-## Component Description and Documentation Duidelines
+## Component Description and Documentation Guidelines
 
 Component repository should have following in it:
 1. Logo - 128x128 PNG file with transparent background
