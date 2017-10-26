@@ -186,3 +186,4 @@ standardized `id` field, etc)
 changed, ID changes over the lifetime of an object, etc.)
 - Hydration
 - Logging
+- Paging
