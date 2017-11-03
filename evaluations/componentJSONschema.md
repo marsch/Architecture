@@ -13,7 +13,6 @@
   "properties": {
     "title": {
       "type": "string",
-      "title": "The Title Schema.",
       "description": "An explanation about the purpose of this instance.",
       "default": "",
       "examples": [
@@ -22,7 +21,6 @@
     },
     "description": {
       "type": "string",
-      "title": "The Description Schema.",
       "description": "An explanation about the purpose of this instance.",
       "default": "",
       "examples": [
@@ -31,7 +29,6 @@
     },
     "docsUrl": {
       "type": "string",
-      "title": "The Docsurl Schema.",
       "description": "An explanation about the purpose of this instance.",
       "default": "",
       "examples": [
@@ -58,7 +55,6 @@
               "properties": {
                 "label": {
                   "type": "string",
-                  "title": "The Label Schema.",
                   "description": "Name of the credential field",
                   "default": "",
                   "examples": [
@@ -67,7 +63,6 @@
                 },
                 "required": {
                   "type": "boolean",
-                  "title": "The Required Schema.",
                   "description": "Defines if the credential field is required",
                   "default": false,
                   "examples": [
@@ -76,7 +71,6 @@
                 },
                 "viewClass": {
                   "type": "string",
-                  "title": "The Viewclass Schema.",
                   "description": "Tbd",
                   "default": "",
                   "examples": [
@@ -85,7 +79,6 @@
                 },
                 "note": {
                   "type": "string",
-                  "title": "The Note Schema.",
                   "description": "Explanation of the input which is expected for this credential field",
                   "default": "",
                   "examples": [
@@ -205,7 +198,6 @@
                     },
                     "prompt": {
                       "type": "string",
-                      "title": "The Prompt Schema.",
                       "description": "Needed to clafiry the model status",
                       "default": "",
                       "examples": [
@@ -280,7 +272,6 @@
                 },
                 "out": {
                   "type": "string",
-                  "title": "The Out Schema.",
                   "description": "Tbd",
                   "default": "",
                   "examples": [
