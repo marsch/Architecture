@@ -2,7 +2,6 @@
   "definitions": {},
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
-  "minProperties": 1,
   "required": [
     "title",
     "description",
