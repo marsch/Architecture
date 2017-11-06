@@ -5,7 +5,6 @@
   "required": [
     "title",
     "description",
-    "docsUrl",
     "credentials",
     "triggers",
     "actions"
@@ -43,7 +42,7 @@
           "type": "object",
           "minProperties": 1,
           "properties": {
-            "apiKey": {
+            "[a-z]+": {
               "type": "object",
               "minProperties": 4,
               "required": [
@@ -94,15 +93,14 @@
     "triggers": {
       "type": "object",
       "minProperties": 1,
-      "properties": {
-        "triggerName": {
+      "patternProperties": {
+        "[a-z]+": {
           "type": "object",
           "minProperties": 5,
           "required": [
             "main",
             "type",
             "title",
-            "fields",
             "metadata"
           ],
           "properties": {
@@ -134,7 +132,7 @@
               "type": "object",
               "minProperties": 1,
               "properties": {
-                "fieldName": {
+                "[a-z]+": {
                   "type": "object",
                   "minProperties": 3,
                   "required": [
@@ -228,8 +226,8 @@
     "actions": {
       "type": "object",
       "minProperties": 1,
-      "properties": {
-        "actionName": {
+      "patternProperties": {
+        "[a-z]+": {
           "type": "object",
           "minProperties": 3,
           "required": [
