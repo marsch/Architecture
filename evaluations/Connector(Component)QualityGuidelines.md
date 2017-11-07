@@ -100,7 +100,7 @@ Example names: `calculateBundeslandFromPostalCode`, `getOrderById`
 
 #### Upsert Object
 Given an object that exists in `other` system, create an object in `this`
-system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/ComponentQualityGuidelines.md#id-linking) for a definition of corresponding object.  If no
+system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/Connector(Component)QualityGuidelines.md#id-linking) for a definition of corresponding object.  If no
 corresponding object exist, this action should do an insert action.  The
 connector should emit the state of the object after the update/insert.
 
@@ -108,7 +108,7 @@ Example Name: `upsertCustomer`
 
 #### Delete Object
 Given an incoming message with an id, delete the corresponding object in the
-system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/ComponentQualityGuidelines.md#id-linking) for a definition of corresponding object.
+system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/Connector(Component)QualityGuidelines.md#id-linking) for a definition of corresponding object.
 
 Example name: `deleteCustomer`
 
