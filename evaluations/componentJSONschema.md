@@ -49,8 +49,7 @@
               "required": [
                 "label",
                 "required",
-                "viewClass",
-                "note"
+                "viewClass"
               ],
               "properties": {
                 "label": {
