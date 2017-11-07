@@ -13,7 +13,7 @@
     "title": {
       "type": "string",
       "description": "An explanation about the purpose of this instance.",
-      "default": "",
+      "default": "Component name",
       "examples": [
         "Petstore API (Node.js)"
       ]
@@ -21,7 +21,7 @@
     "description": {
       "type": "string",
       "description": "An explanation about the purpose of this instance.",
-      "default": "",
+      "default": "Your component description",
       "examples": [
         "elastic.io component for the Petstore API"
       ]
@@ -29,7 +29,8 @@
     "docsUrl": {
       "type": "string",
       "description": "An explanation about the purpose of this instance.",
-      "default": "",
+      "format": "uri",
+      "default": "https://linkToYourDocs.com",
       "examples": [
         "https://github.com/elasticio/petstore-component-nodejs"
       ]
@@ -37,8 +38,8 @@
     "credentials": {
       "type": "object",
       "minProperties": 1,
-      "properties": {
-        "fields": {
+      "patternProperties": {
+        "[a-z]+": {
           "type": "object",
           "minProperties": 1,
           "properties": {
@@ -55,7 +56,7 @@
                 "label": {
                   "type": "string",
                   "description": "Name of the credential field",
-                  "default": "",
+                  "default": "Credential Name",
                   "examples": [
                     "API key"
                   ]
@@ -71,7 +72,7 @@
                 "viewClass": {
                   "type": "string",
                   "description": "Tbd",
-                  "default": "",
+                  "default": "TextFieldWithNoteView",
                   "examples": [
                     "TextFieldWithNoteView"
                   ]
@@ -79,7 +80,7 @@
                 "note": {
                   "type": "string",
                   "description": "Explanation of the input which is expected for this credential field",
-                  "default": "",
+                  "default": "E.g. Api Key",
                   "examples": [
                     "Please use <strong>elasticio</strong> as API key. For more details see <a href='https://petstore.elastic.io/docs/'>Petstore API docs</a>."
                   ]
@@ -107,15 +108,16 @@
             "main": {
               "type": "string",
               "description": "Tbd",
-              "default": "",
+              "default": "Path to trigger.js",
               "examples": [
                 "./lib/triggers/getPetsByStatusWithGenerators.js"
               ]
             },
             "type": {
               "type": "string",
+              "enum": ["polling", "pushing"],
               "description": "Defines if the trigger is a polling or pushing trigger",
-              "default": "",
+              "default": "polling",
               "examples": [
                 "polling"
               ]
@@ -123,7 +125,7 @@
             "title": {
               "type": "string",
               "description": "Descriptive name of the trigger",
-              "default": "",
+              "default": "Trigger title",
               "examples": [
                 "Get Pets By Status With Generators"
               ]
@@ -131,7 +133,7 @@
             "fields": {
               "type": "object",
               "minProperties": 1,
-              "properties": {
+              "patternProperties": {
                 "[a-z]+": {
                   "type": "object",
                   "minProperties": 3,
@@ -144,7 +146,7 @@
                     "label": {
                       "type": "string",
                       "description": "Decriptive name of the trigger field",
-                      "default": "",
+                      "default": "Field title",
                       "examples": [
                         "Pet Status"
                       ]
@@ -160,44 +162,28 @@
                     "viewClass": {
                       "type": "string",
                       "description": "Tbd",
-                      "default": "",
+                      "default": "SelectView",
                       "examples": [
                         "SelectView"
                       ]
                     },
                     "model": {
                       "type": "object",
-                      "properties": {
-                        "available": {
+                      "patternProperties": {
+                        "[a-z]+": {
                           "type": "string",
                           "description": "Describes if the model is available",
-                          "default": "",
+                          "default": "Available",
                           "examples": [
                             "Available"
                           ]
-                        },
-                        "pending": {
-                          "type": "string",
-                          "description": "Describes if the model is pending",
-                          "default": "",
-                          "examples": [
-                            "Pending"
-                          ]
-                        },
-                        "sold": {
-                          "type": "string",
-                          "description": "Describes if the model is sold",
-                          "default": "",
-                          "examples": [
-                            "Sold"
-                          ]
-                        }
+                        }                
                       }
                     },
                     "prompt": {
                       "type": "string",
                       "description": "Needed to clafiry the model status",
-                      "default": "",
+                      "default": "Select Status",
                       "examples": [
                         "Select Pet Status"
                       ]
@@ -212,7 +198,7 @@
                 "out": {
                   "type": "string",
                   "description": "Tbd",
-                  "default": "",
+                  "default": "path to out metadata ",
                   "examples": [
                     "./lib/schemas/getPetsByStatus.out.json"
                   ]
@@ -239,7 +225,7 @@
             "main": {
               "type": "string",
               "description": "Tbd",
-              "default": "",
+              "default": "Path to action .json",
               "examples": [
                 "./lib/actions/createPetWithPromise.js"
               ]
@@ -247,7 +233,7 @@
             "title": {
               "type": "string",
               "description": "Descriptive name of the action",
-              "default": "",
+              "default": "Title Name",
               "examples": [
                 "Create a Pet With Promise"
               ]
@@ -261,17 +247,17 @@
               ],
               "properties": {
                 "in": {
-                  "type": "string",
-                  "description": "Source of the metdata",
-                  "default": "",
+                  "type": ["string", "object"],
+                  "description": "Source of the metdata. Either a path to a json schema(string) or an inline json schema (object)",
+                  "default": "Path to in metadata",
                   "examples": [
                     "./lib/schemas/createPet.in.json"
                   ]
                 },
                 "out": {
-                  "type": "string",
-                  "description": "Tbd",
-                  "default": "",
+                  "type": ["string", "object"],
+                  "description": "Either a path to a json schema(string) or an inline json schema (object)",
+                  "default": "Path to out metadata",
                   "examples": [
                     "./lib/schemas/createPet.out.json"
                   ]
