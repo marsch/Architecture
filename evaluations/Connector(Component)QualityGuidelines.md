@@ -1,10 +1,10 @@
-# Quality Guidelines for Integration Components
+# Quality Guidelines for Connectors (Integration Components)
 
-## Component Description and Documentation Guidelines
+## Connector Description and Documentation Guidelines
 
-Component repository should have following in it:
+Connector repository should have following in it:
 1. Logo - 128x128 PNG file with transparent background
-1. Component descriptor that satisfies the `component.json` such as
+1. Connector descriptor that satisfies the `component.json` such as
    * Each file should have a global `description` field filled.
    * Each file should have a link to the documentation, e.g. `README` file below
    * Each field in credentials should have a `note` on it explaining what exactly is required here (unless it's obvious, e.g.
@@ -18,12 +18,12 @@ Component repository should have following in it:
    * List of environment variables that need to be configured (e.g. OAuth ClientID/Secret)
    * Version and compatibility information
    * Documentation for the authentication process, how to find API key, etc.
-   * Documentation for each Action and Trigger in the component, this description have to include
+   * Documentation for each Action and Trigger in the connector, this description have to include
       * Screen shot of the parameters with sample meaningful values (if parameters are defined for given trigger/action)
       * Description of the parameters (if any)
       * Description of the incoming message and outgoing message (e.g. Update Contact Action)
       * Description of any attachments generated or consumed
-   * Documentation for each Action and Trigger in the component may also include
+   * Documentation for each Action and Trigger in the connector may also include
       * Sample of the minimum viable input (e.g. for updating or creating something)
       * Description of the dynamic metadata generation rules, metadata discovery rules
    * Known limitations, may be with link to the issue
@@ -32,9 +32,9 @@ Component repository should have following in it:
 1. License file
 1. Changelog
 
-## Semantic Convention for API-Component Mapping
+## Semantic Convention for API-Connector Mapping
 
-It is important to define common rules on how an integration component respond
+It is important to define common rules on how an connector respond
 to and perform actions on generic actions on a domain object.
 
 In general, any action or trigger should only make requests to one API endpoint
@@ -48,7 +48,7 @@ to creating batches.
 ### Triggers/Webhooks
 
 #### Event Sourcing / Events updates
-This describes the way a component should handle the creation of new objects and
+This describes the way a connector should handle the creation of new objects and
 the updates of existing objects.
 
 **Polling Triggers** will initially fetch all objects.  After this initial import, it
@@ -74,7 +74,7 @@ The id or location of an object changes.  TBD.
 ### Actions
 
 #### Enrich Object / Lookup
-Given an incoming object, with some information, this type of component will
+Given an incoming object, with some information, this type of connector will
 calculate and or add additional relevant information.
 
 The outgoing object should be the same as the incoming object except that
@@ -102,7 +102,7 @@ Example names: `calculateBundeslandFromPostalCode`, `getOrderById`
 Given an object that exists in `other` system, create an object in `this`
 system.  See [**ID Linking**](https://github.com/openintegrationhub/architecture/blob/master/evaluations/ComponentQualityGuidelines.md#id-linking) for a definition of corresponding object.  If no
 corresponding object exist, this action should do an insert action.  The
-component should emit the state of the object after the update/insert.
+connector should emit the state of the object after the update/insert.
 
 Example Name: `upsertCustomer`
 
@@ -115,7 +115,7 @@ Example name: `deleteCustomer`
 ### Action with only Side Effects
 Perform an action which does not manipulate data.
 
-Name should be of the form verb-noun.  The component should emit the input.
+Name should be of the form verb-noun.  The connector should emit the input.
 
 Example name: `sendEmail`
 
@@ -179,7 +179,7 @@ _Proposal:_ Implementation of a changelog is needed
 ## TODOS
 - APIs with automatic object and field discovery
 - Define any standardized metadata information that should be calculated and
-added to the outbound message by the component.  (E.g. `isNew`, `timeOfEvent`,
+added to the outbound message by the connector.  (E.g. `isNew`, `timeOfEvent`,
 standardized `id` field, etc)
 - Define behavior for handling object merges
 - Define behavior for object moves (API endpoint change because the type
