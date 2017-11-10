@@ -1,14 +1,33 @@
-# Usefull backlog item (issue)
+# Contribution Guideline
+[General information](#general-information)
 
-### Since we use an 'issue' on multi purpose, let's call generally it an **item**
+[How can I add new content](#how-to-add-new-content)
+  * [Pull request](#creating-a-pull-request)
+  * [Isues](#creating-an-issue)
 
-> Please use the ZenHub [extension](https://www.zenhub.com/extension) with your browser and find some [help](https://help.github.com/categories/writing-on-github) on how to format with markup.
+[How Can I Contribute?](#how-can-i-contribute)
+  * [Reporting Bugs](#reporting-bugs)
+  * [Suggesting Enhancements](#suggesting-enhancements)
+  * [Your First Code Contribution](#your-first-code-contribution)
+  * [Pull Requests](#pull-requests)
 
-## Definition of done ([DoD](https://agilepainrelief.com/notesfromatooluser/2017/05/definition-of-done-vs-user-stories-vs-acceptance-criteria.html#.Wd28ARO0PUI))
-- Contribute in **English only** - incl. linked attachements
-- **Assign** an issue to member(s) - at least to yourself
-- Give an **Estimate** about the complexity of the item
-- Add **Sub-task** to inform others about its progress
-- Define **Acceptance criteria** derived from the user story
+[Styleguides](#styleguides)
+  * [Git Commit Messages](#git-commit-messages)
+  * [JavaScript Styleguide](#javascript-styleguide)
+  * [CoffeeScript Styleguide](#coffeescript-styleguide)
+  * [Specs Styleguide](#specs-styleguide)
+  * [Documentation Styleguide](#documentation-styleguide)
 
-### If this 'item' fulfill the DoD, you can move it into the 'Backlog' lane.
+[Additional Notes](#additional-notes)
+  * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
+
+
+## General information
+- Contribute in **English only**
+- Please use the ZenHub [extension](https://www.zenhub.com/extension) with your browser and find some [help](https://help.github.com/categories/writing-on-github) on how to format with markup.
+
+## How to add new content
+
+### Creating a pull request
+
+### Creating an issue
