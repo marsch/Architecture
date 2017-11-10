@@ -20,4 +20,4 @@
 
 ## Contribution
 
-Before you contribute, please read the contribution guideline.
+Before you contribute, please read the [contribution guideline](https://github.com/openintegrationhub/Architecture/blob/master/CONTRIBUTING.md#creating-an-issue).
