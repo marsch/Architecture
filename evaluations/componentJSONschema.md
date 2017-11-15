@@ -167,7 +167,7 @@
                       ]
                     },
                     "model": {
-                      "type": "object",
+                      "type": ["string","object"],
                       "patternProperties": {
                         "[a-z]+": {
                           "type": "string",
@@ -222,7 +222,7 @@
       "patternProperties": {
         "[a-z]+": {
           "type": "object",
-          "minProperties": 2,
+          "minProperties": 3,
           "required": [
             "main",
             "title"
