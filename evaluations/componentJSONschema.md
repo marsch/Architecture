@@ -5,9 +5,7 @@
   "required": [
     "title",
     "description",
-    "credentials",
-    "triggers",
-    "actions"
+    "credentials"
   ],
   "properties": {
     "title": {
@@ -38,14 +36,17 @@
     "credentials": {
       "type": "object",
       "minProperties": 1,
-      "patternProperties": {
-        "[a-z]+": {
+      "required": [
+        "fields"
+      ],
+      "properties": {
+        "fields": {
           "type": "object",
           "minProperties": 1,
-          "properties": {
+          "patternProperties": {
             "[a-z]+": {
               "type": "object",
-              "minProperties": 4,
+              "minProperties": 3,
               "required": [
                 "label",
                 "required",
@@ -100,8 +101,7 @@
           "required": [
             "main",
             "type",
-            "title",
-            "metadata"
+            "title"
           ],
           "properties": {
             "main": {
@@ -196,13 +196,21 @@
               "properties": {
                 "out": {
                   "type": "string",
-                  "description": "Tbd",
+                  "description": "Metadata defining the structure of the output messages.",
                   "default": "path to out metadata ",
                   "examples": [
                     "./lib/schemas/getPetsByStatus.out.json"
                   ]
                 }
               }
+            },
+            "dynamicMetadata": {
+              "type": "boolean",
+              "description": "Defines dynamic Metadata is supported/enabled",
+              "default": false,
+              "examples": [
+                true
+              ]
             }
           }
         }
@@ -217,8 +225,7 @@
           "minProperties": 3,
           "required": [
             "main",
-            "title",
-            "metadata"
+            "title"
           ],
           "properties": {
             "main": {
@@ -255,13 +262,21 @@
                 },
                 "out": {
                   "type": ["string", "object"],
-                  "description": "Either a path to a json schema(string) or an inline json schema (object)",
+                  "description": "Metadata defining the structure of the output messages.",
                   "default": "Path to out metadata",
                   "examples": [
                     "./lib/schemas/createPet.out.json"
                   ]
                 }
               }
+            },
+            "dynamicMetadata": {
+              "type": "boolean",
+              "description": "Defines dynamic Metadata is supported/enabled",
+              "default": false,
+              "examples": [
+                true
+              ]
             }
           }
         }
