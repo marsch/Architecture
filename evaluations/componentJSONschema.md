@@ -1,5 +1,14 @@
 {
-  "definitions": {},
+  "definitions": {
+    "viewClass": {
+      "type": "string",
+      "description": "Tbd",
+      "default": "TextFieldWithNoteView",
+      "examples": [
+        "TextFieldWithNoteView"
+      ]
+    }
+  },
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
   "required": [
@@ -69,14 +78,7 @@
                     true
                   ]
                 },
-                "viewClass": {
-                  "type": "string",
-                  "description": "Tbd",
-                  "default": "TextFieldWithNoteView",
-                  "examples": [
-                    "TextFieldWithNoteView"
-                  ]
-                },
+                "viewClass": {"$ref": "#/definitions/viewClass"},
                 "note": {
                   "type": "string",
                   "description": "Explanation of the input which is expected for this credential field",
@@ -158,14 +160,7 @@
                         true
                       ]
                     },
-                    "viewClass": {
-                      "type": "string",
-                      "description": "Tbd",
-                      "default": "SelectView",
-                      "examples": [
-                        "SelectView"
-                      ]
-                    },
+                    "viewClass": {"$ref": "#/definitions/viewClass"},
                     "model": {
                       "type": ["string","object"],
                       "patternProperties": {
