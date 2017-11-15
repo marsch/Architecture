@@ -97,7 +97,7 @@
       "patternProperties": {
         "[a-z]+": {
           "type": "object",
-          "minProperties": 5,
+          "minProperties": 3,
           "required": [
             "main",
             "type",
@@ -195,7 +195,7 @@
               "type": "object",
               "properties": {
                 "out": {
-                  "type": "string",
+                  "type": ["object","string"],
                   "description": "Metadata defining the structure of the output messages.",
                   "default": "path to out metadata ",
                   "examples": [
@@ -222,7 +222,7 @@
       "patternProperties": {
         "[a-z]+": {
           "type": "object",
-          "minProperties": 3,
+          "minProperties": 2,
           "required": [
             "main",
             "title"
