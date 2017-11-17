@@ -13,10 +13,11 @@
 
 | Workgroup  | Member Name | Role |
 | ------------- | ------------- | ------------- |
-| Architecture  | Name  | **Committer & Lead**  |
-|  | Name  | Committer  |
-|  | Name  | Committer  |
-|  | Name  | Contributor  |
+| Architecture  | Name  | **Franz**  |
+|  | Name  | Igor  |
+|  | Name  | Selim  |
+|  | Name  | Susanne  |
+|  | Name  | Lutz  |
 
 ## Workgroup Content
 
