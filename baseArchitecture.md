@@ -24,16 +24,16 @@ If the contract of the message broker interface cannot be met by a system or app
 The OIH Data Hub is an optional component providing master data management features like reporting and auditing.
 
 ### OIH Tooling for development and operations
-The tools are used to create and configure the runtime artifacts for the OIH runtime like connectors and connections. 
+The tools are used to create and configure the runtime artifacts for the OIH runtime like connectors and connections.
 
 ## Business Context
 List of communication partners from a business perspective
-	
-### Partner ISV application	
+
+### Partner ISV application
 Domain specific services for the domains:
 * Customer
 * Product
-### Partner ISV application user	
+### Partner ISV application user
 Configuration services provided by the marketplace to configure the application in an OIH context:
 * Register application to OIH
 * Configure exchangeable data
@@ -41,20 +41,20 @@ Configuration services provided by the marketplace to configure the application 
 ## Technical Context
 List of communication partners from a technical perspective
 
-### Partner ISV application using the OIH API	
+### Partner ISV application using the OIH API
 Protocol: Message Queue/Topic
 
 Markup: JSON
 
 Data model: see MDM concept
-### Partner ISV application with application specific communication	
+### Partner ISV application with application specific communication
 Protocol: application specific, e.g. HTTP/Rest, RFC
 
 Markup: application specific, e.g. SOAP, XML, CSV, iDoc
 
 Data model: application specific
 
-### Partner Market place configuration service	
+### Partner Market place configuration service
 Protocol: ND
 
 Markup: JSON
@@ -67,17 +67,17 @@ The Microservices architecture pattern will be used for all services of the OIH 
 * Flexibility for implementation and deployment of individual microservices
 * Scalability during development
 
-## Container virtualization	
+## Container virtualization
 Docker will be used as the virtualization solution.
 
-## Service Communication OIH services	
+## Service Communication OIH services
 The microservices within the OIH provides http/rest with markup JSON APIs.
 
 ## Service Communication ISV applications with OIH
-The API used by connectors to commuicate with the hub is messaging based with markup JSON. The main reason is, that the communication must be asynchronous. 
+The API used by connectors to commuicate with the hub is messaging based with markup JSON. The main reason is, that the communication must be asynchronous.
 
 ## Master Data Model
-A compatible Master Data Model can be created. 
+A compatible Master Data Model can be created.
 It must support different ISV applications with regional and language specific models and behaviors.
 
 # Solution Strategy
@@ -103,17 +103,17 @@ Messages interchanged by an application and the OIH are routed according to the 
 * which connected applications are allowed to communicate using this connection
 
 ## Integrating an ISV application
-ISV applications with existing APIs for the exchange of master data are connected using a connector. 
+ISV applications with existing APIs for the exchange of master data are connected using a connector.
 An ISV application without existing APIs needs to implement an API to enable the exchange of data with the OIH.
 
 ![](https://github.com/openintegrationhub/architecture/blob/master/images/OIHApplicationV2.png)
 
-The application should still use its own data storage to be independent from a connection to the OIH. 
+The application should still use its own data storage to be independent from a connection to the OIH.
 APIs for inbound and outbound data exchange can be implemented.
 
 ## Data Storage
 Using the optional component "OIH Datahub", it is possible to store master data within the OIH. The OIH Datahub provides capabilities like:
-* Auditing 
+* Auditing
 * Reporting
 * Backup and Recovery
 * Information Lifecycle Management (e.g. [GDPR](https://gdpr-info.eu/))
