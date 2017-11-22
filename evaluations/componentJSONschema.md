@@ -7,6 +7,21 @@
       "examples": [
         "TextFieldWithNoteView"
       ]
+    },
+    "fields": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "[a-z]+": {
+          "type": "object",
+          "minProperties": 3,
+          "required": [
+            "label",
+            "required",
+            "viewClass"
+          ]
+        }
+      }  
     }
   },
   "$schema": "http://json-schema.org/draft-06/schema#",
@@ -49,48 +64,7 @@
         "fields"
       ],
       "properties": {
-        "fields": {
-          "type": "object",
-          "minProperties": 1,
-          "patternProperties": {
-            "[a-z]+": {
-              "type": "object",
-              "minProperties": 3,
-              "required": [
-                "label",
-                "required",
-                "viewClass"
-              ],
-              "properties": {
-                "label": {
-                  "type": "string",
-                  "description": "Name of the credential field",
-                  "default": "Credential Name",
-                  "examples": [
-                    "API key"
-                  ]
-                },
-                "required": {
-                  "type": "boolean",
-                  "description": "Defines if the credential field is required",
-                  "default": false,
-                  "examples": [
-                    true
-                  ]
-                },
-                "viewClass": {"$ref": "#/definitions/viewClass"},
-                "note": {
-                  "type": "string",
-                  "description": "Explanation of the input which is expected for this credential field",
-                  "default": "E.g. Api Key",
-                  "examples": [
-                    "Please use <strong>elasticio</strong> as API key. For more details see <a href='https://petstore.elastic.io/docs/'>Petstore API docs</a>."
-                  ]
-                }
-              }
-            }
-          }
-        }
+        "fields": {"$ref": "#/definitions/fields"}
       }
     },
     "triggers": {
@@ -100,6 +74,7 @@
         "[a-z]+": {
           "type": "object",
           "minProperties": 3,
+          "description" : "Tbd",
           "required": [
             "main",
             "type",
@@ -131,61 +106,7 @@
                 "Get Pets By Status With Generators"
               ]
             },
-            "fields": {
-              "type": "object",
-              "minProperties": 1,
-              "patternProperties": {
-                "[a-z]+": {
-                  "type": "object",
-                  "minProperties": 3,
-                  "required": [
-                    "label",
-                    "required",
-                    "viewClass"
-                  ],
-                  "properties": {
-                    "label": {
-                      "type": "string",
-                      "description": "Decriptive name of the trigger field",
-                      "default": "Field title",
-                      "examples": [
-                        "Pet Status"
-                      ]
-                    },
-                    "required": {
-                      "type": "boolean",
-                      "description": "Defines if the credential field is required",
-                      "default": false,
-                      "examples": [
-                        true
-                      ]
-                    },
-                    "viewClass": {"$ref": "#/definitions/viewClass"},
-                    "model": {
-                      "type": ["string","object"],
-                      "patternProperties": {
-                        "[a-z]+": {
-                          "type": "string",
-                          "description": "Describes if the model is available",
-                          "default": "Available",
-                          "examples": [
-                            "Available"
-                          ]
-                        }                
-                      }
-                    },
-                    "prompt": {
-                      "type": "string",
-                      "description": "Needed to clafiry the model status",
-                      "default": "Select Status",
-                      "examples": [
-                        "Select Pet Status"
-                      ]
-                    }
-                  }
-                }
-              }
-            },
+            "fields": {"$ref": "#/definitions/fields"},
             "metadata": {
               "type": "object",
               "properties": {
@@ -218,6 +139,7 @@
         "[a-z]+": {
           "type": "object",
           "minProperties": 3,
+          "description" : "Tbd",
           "required": [
             "main",
             "title"
