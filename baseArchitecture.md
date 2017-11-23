@@ -10,7 +10,7 @@ The OIH consists of three parts:
 * OIH datahub
 * OIH tooling
 
-The decision to this decomposition considers that the datahub is an optional component which is not necessary to deploy, run and use the OIH. The tooling is needed to configure OIH artifacts and initialize the OIH runtime. 
+The decision to this decomposition considers that the datahub is an optional component which is not necessary to deploy, run and use the OIH. The tooling is needed to configure OIH artifacts and initialize the OIH runtime.
 
 ### OIH runtime
 The OIH runtime is the central part of the OIH. It must be deployable in a cloud environment and in onsite customer environments.
