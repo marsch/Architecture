@@ -71,7 +71,7 @@ read, update and delete objects) then the following diagram explains which
 triggers and actions should exist in the connector.  The triggers and actions
 should aim at covering 100% of the objects provided by the API.
 
-![API Classification](https://github.com/openintegrationhub/Architecture/blob/master/images/ApiClassification.png)
+![API Classification](https://github.com/openintegrationhub/Architecture/blob/master/adapters/sources/ApiClassification.png)
 
 A checklist for each case exists in the document `ConnectorCompletenessChecklist.md`.
 
