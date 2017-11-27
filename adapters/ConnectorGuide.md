@@ -3,11 +3,11 @@
 This document is designed as a guide.  It explains the problems which a
 connector must solve and the recommended way of solving those problems.
 
-There is an additional document `ConnectorCompletenessChecklist.md` which is a
+There is an additional document [`ConnectorCompletenessChecklist.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/ConnectorCompletenessChecklist.md) which is a
 checklist which lists all items which should be done for a fully complete
 component.
 
-There is an additional document `ConnectorOpenQuestions.md` which discusses
+There is an additional document [`ConnectorOpenQuestions.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/ConnectorOpenQuestions.md) which discusses
 potential shortcomings and enhancements to the current connector approach.
 
 # What is a connector?
