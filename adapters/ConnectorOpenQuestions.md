@@ -144,7 +144,6 @@ Consider the following sequence of events:
 
 How is this cycle broken?
 
-
 # Other Open Questions
 * How to handle object changes in systems, without a change tracking?
   -> Implementation of a changelog is needed
