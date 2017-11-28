@@ -1,19 +1,19 @@
-# Completeness Checklist for Connectors (Integration Components)
+# Completeness Checklist for adapters (Integration Components)
 
 This document is designed to be a checklist.  After a component author has
 written a component, they should be able to take this checklist to see if their
 component is complete.
 
-There is an additional guide `ConnectorGuide.md` which explains how to design a connector.
+There is an additional guide `AdapterGuide.md` which explains how to design a adapter.
 
-There is an additional document `ConnectorOpenQuestions.md` which discusses
-potential shortcomings and enhancements to the current connector approach.
+There is an additional document `AdapterOpenQuestions.md` which discusses
+potential shortcomings and enhancements to the current adapter approach.
 
-# Connector Description and Documentation Guidelines
+# Adapter Description and Documentation Guidelines
 
-Connector repository should have following in it:
+Adapter repository should have following in it:
 - [ ] Logo - 128x128 PNG file with transparent background
-- [ ] Connector descriptor that satisfies the `component.json` such as
+- [ ] Adapter descriptor that satisfies the `component.json` such as
   - [ ] Each file should have a global `description` field filled.
   - [ ] Each file should have a link to the documentation, e.g. `README` file below
   - [ ] Each field in credentials should have a `note` on it explaining what exactly is required here (unless it's obvious, e.g.
@@ -23,16 +23,16 @@ Connector repository should have following in it:
   - [ ] Each field in the trigger/action should have a `note` explaining what expected to be there as well as meaningful example
    in `placeholder` which could be (for optional fields) a default value if field is empty
 - [ ] `README.MD` file that contains
-  - [ ] Description of the application connector connects to
+  - [ ] Description of the application adapter connects to
   - [ ] List of environment variables that need to be configured (e.g. OAuth ClientID/Secret)
   - [ ] Version and compatibility information
   - [ ] Documentation for the authentication process, how to find API key, etc.
-  - [ ] Documentation for each Action and Trigger in the connector, this description have to include
+  - [ ] Documentation for each Action and Trigger in the adapter, this description have to include
     - [ ] Screen shot of the parameters with sample meaningful values (if parameters are defined for given trigger/action)
     - [ ] Description of the parameters (if any)
     - [ ] Description of the incoming message and outgoing message (e.g. Update Contact Action)
     - [ ] Description of any attachments generated or consumed
-  - [ ] Documentation for each Action and Trigger in the connector may also include
+  - [ ] Documentation for each Action and Trigger in the adapter may also include
     - [ ] Sample of the minimum viable input (e.g. for updating or creating something)
     - [ ] Description of the dynamic metadata generation rules, metadata discovery rules
   - [ ] Known limitations, may be with link to the issue
@@ -42,10 +42,10 @@ Connector repository should have following in it:
 - [ ] Changelog
 
 # Required Component Behaviors
-See the section `Given an API how should a connector behave?` in the document
-`ConnectorGuide` to see which questions must be asked and answered to see which
-case your connector falls into.  The following sections list each case and then
-the expected actions and triggers of the connectors.
+See the section `Given an API how should a adapter behave?` in the document
+`AdapterGuide` to see which questions must be asked and answered to see which
+case your adapter falls into.  The following sections list each case and then
+the expected actions and triggers of the adapters.
 
 ## Case 1:
 - The list of business objects is dynamic
@@ -171,7 +171,7 @@ the expected actions and triggers of the connectors.
   - [ ] the static list of readable objects
 
 # Requirements to Test a Component
-In order for an individual to test the correctness of a connector, the following
+In order for an individual to test the correctness of a adapter, the following
 resources are required in order to access the API:
 - [ ] An instance/account/tenant for the tester to use.  This includes:
   - [ ] A server with the API is set up (or the API is already hosted in the cloud)
@@ -181,6 +181,6 @@ resources are required in order to access the API:
 - [ ] The tester must be have permission to:
   - [ ] Login to the test account/system
   - [ ] Create, Update and Delete objects as required in the UI of the system
-  - [ ] Configure API access for the connector
+  - [ ] Configure API access for the adapter
 - [ ] Data in the test instance/account/tenant can only be manipulated by the
-tester and the connector. (No shared test instances/accounts/tenants.)
+tester and the adapter. (No shared test instances/accounts/tenants.)

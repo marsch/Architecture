@@ -1,16 +1,16 @@
-# Open Questions Related To Connector Design
+# Open Questions Related To Adapter Design
 
-This document discusses problems not addressed by the connector guide or
+This document discusses problems not addressed by the adapter guide or
 proposed changes to the existing guide.
 
-There is an additional guide `ConnectorGuide.md` which explains how to design a connector.
+There is an additional guide `AdapterGuide.md` which explains how to design a adapter.
 
-There is an additional document `ConnectorCompletenessChecklist.md` which is a
+There is an additional document `AdapterCompletenessChecklist.md` which is a
 checklist which lists all items which should be done for a fully complete
 component.
 
 # ID Linking of the Objects Themselves
-When a connector must alter (such as delete or update) a record in the system
+When a adapter must alter (such as delete or update) a record in the system
 that it is connected to, there needs to be a method to link incoming request
 from some  `other` system to the ids which exist in `this` system.  Consider the
 following possibilities.
@@ -48,11 +48,11 @@ FooCRM, someone creates an account `Alpha GmbH`.  When the account is created
 some information about Alpha GmbH is recorded such as company name and address.
 Additionally, it is recorded that the account is assigned to Alice.  Because
 FooCRM and BarCRM accounts are synced, using the flows described in
-`ConnectorGuide` the creation of Alpha GmbH in FooCRM results in the creation of
-an account being created in BarCRM.  The connector for BarCRM will receive the
-address and name information for Alpha GmbH.  The connector will also be
+`AdapterGuide` the creation of Alpha GmbH in FooCRM results in the creation of
+an account being created in BarCRM.  The adapter for BarCRM will receive the
+address and name information for Alpha GmbH.  The adapter will also be
 informed that this account is assigned to salesperson `123` in FooCRM.  Given
-this information, how does the connector know to assign the new account in
+this information, how does the adapter know to assign the new account in
 BarCRM to salesperson `abc` in BarCRM?
 
 # Initial Data Fetch
@@ -83,7 +83,7 @@ tool which can then be used as a recovery mechanism outages to the webhook
 infrastructure.
 
 # Standardized Event Metadata Information:
-Consider the standardized actions and triggers defined in `ConnectorGuide.md`
+Consider the standardized actions and triggers defined in `AdapterGuide.md`
 and the following pieces of relevant system-agnostic information that these
 triggers and actions likely could emit:
 * Get Objects (Polling and webhook):
@@ -102,7 +102,7 @@ triggers and actions likely could emit:
   * The time of the object deletion
 
 Currently, the omission of this information isn't relevant for the SugarCRM
-example provided in the `ConnectorGuide.md`.  However, providing this
+example provided in the `AdapterGuide.md`.  However, providing this
 information may be helpful for solving future problems.
 
 # Define behavior for handling object merges
@@ -117,15 +117,15 @@ merges in one system propagate to merges in integrated systems would be the
 desired behavior.
 
 # Logging
-Connectors have the ability to log the data that passes through as well as
-record the operations that the connector completes.  This leads to the following
+Adapters have the ability to log the data that passes through as well as
+record the operations that the adapter completes.  This leads to the following
 questions:
 * What information needs to be logged so that the logs are useful
-* Should logging formats be standardized to facilitate automatic linking of log events between connectors?
+* Should logging formats be standardized to facilitate automatic linking of log events between adapters?
 * What data passing through should be logged?  What data passing through is too sensitive to be logged?
-* Should all connectors be able written to work with (the language specific) a
+* Should all adapters be able written to work with (the language specific) a
  logging utility which allows logging settings (such as logging levels and log
-storage mediums) to be uniformly configured between connectors written by
+storage mediums) to be uniformly configured between adapters written by
 different developers.  (For example, consider [log4j for
 Java](https://en.wikipedia.org/wiki/Log4j) and its ports to other languages.)
 

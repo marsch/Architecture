@@ -1,17 +1,17 @@
-# Guide for Creating a Connector
+# Guide for Creating a Adapter
 
 This document is designed as a guide.  It explains the problems which a
-connector must solve and the recommended way of solving those problems.
+adapter must solve and the recommended way of solving those problems.
 
-There is an additional document [`ConnectorCompletenessChecklist.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/ConnectorCompletenessChecklist.md) which is a
+There is an additional document [`AdapterCompletenessChecklist.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/AdapterCompletenessChecklist.md) which is a
 checklist which lists all items which should be done for a fully complete
 component.
 
-There is an additional document [`ConnectorOpenQuestions.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/ConnectorOpenQuestions.md) which discusses
-potential shortcomings and enhancements to the current connector approach.
+There is an additional document [`AdapterOpenQuestions.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/AdapterOpenQuestions.md) which discusses
+potential shortcomings and enhancements to the current adapter approach.
 
-# What is a connector?
-An **connector** is a single, reusable piece of functionality that typically
+# What is an adapter?
+An **adapter** is a single, reusable piece of functionality that typically
 represents a way to communicate with one system and/or API.  This functionality
 is created by combining code with a file (`component.json`) which describes:
 * **triggers** - functionality which is triggered based on a schedule or by an
@@ -23,12 +23,12 @@ is created by combining code with a file (`component.json`) which describes:
 [See elastic.io's defintion of a component.json
 file](https://support.elastic.io/support/solutions/articles/14000036334-component-descriptor-structure)
 
-The intent is that several connectors can be combined to create an [integration
+The intent is that several adapters can be combined to create an [integration
 flow](https://support.elastic.io/support/solutions/articles/14000032295-what-is-an-integration-flow-).
  Several integration flows can then collectively form an integration.
 
-# What API Functionality is Necessary to Build a Connector?
-In order to build a connector which will perform generic CRUD operations (for
+# What API Functionality is Necessary to Build a Adapter?
+In order to build a adapter which will perform generic CRUD operations (for
 business objects where business rules allow CRUD operations) the API must expose
 CRUD functionality.  More specifically, the API must allow the following:
 
@@ -64,16 +64,16 @@ a SOAP API, a SQL (or other) DB connection, etc.
 
 *CRUD: Create, Read, Update and Delete*
 
-# Given an API how should a connector behave?
+# Given an API how should a adapter behave?
 The expected actions and triggers on a component depend on the behavior of the
 API.  If the API supports CRUD operations (i.e. the API allows you to create,
 read, update and delete objects) then the following diagram explains which
-triggers and actions should exist in the connector.  The triggers and actions
+triggers and actions should exist in the adapter.  The triggers and actions
 should aim at covering 100% of the objects provided by the API.
 
 ![API Classification](https://github.com/openintegrationhub/Architecture/blob/master/adapters/sources/ApiClassification.png)
 
-A checklist for each case exists in the document `ConnectorCompletenessChecklist.md`.
+A checklist for each case exists in the document `AdapterCompletenessChecklist.md`.
 
 ## Question 1: Is the list of business objects dynamic?
 Some systems have a fixed list of objects (and corresponding API endpoints)
@@ -83,7 +83,7 @@ endpoints).  In this case, it is common for the system to provide an API
 endpoint which can provide a list of all dynamic objects as well as the
 structure of every object.
 
-If the system has a fixed list of objects, then the connector developer can
+If the system has a fixed list of objects, then the adapter developer can
 provide a hardcoded list of objects that the component can interact with.  If
 the list of objects is dynamic and it is possible to use the API to learn the
 list of existing objects, the developer should write code to fetch that list and
@@ -105,7 +105,7 @@ users and admins to customize the structure of each object.  In this case, it is
 common for the system to provide an API endpoint which can provide the structure
 of any object in the system.
 
-If the objects has a fixed structure, then the connector developer can hard code
+If the objects has a fixed structure, then the adapter developer can hard code
 the schema of the objects produced.  Otherwise, the developer should write code
 to fetch [the dynamic structure of that
 object.](https://github.com/elasticio/sugarcrm-component/blob/master/lib/actions/upsertObject.js#L36-L43).
@@ -123,10 +123,10 @@ having a scheduled job periodically make calls for changes that may or may not
 have occurred.
 
 # Descriptions of standardized actions or triggers
-It is important to define common rules on how a connector responds to changes
-and perform actions on generic actions on a domain object.  If connectors follow
+It is important to define common rules on how a adapter responds to changes
+and perform actions on generic actions on a domain object.  If adapters follow
 common behaviors, then it is possible to build integrations by combining
-connectors which are developed by different developers.
+adapters which are developed by different developers.
 
 In general, all actions or triggers should emit events individually as opposed
 to creating batches.
@@ -159,7 +159,7 @@ can return the results based on some ordering.  (In our case, the useful
 ordering will be by last updated time.)  The system will often provide either a
 link to the next page or the next page can be obtained by modifying the search
 criteria so that objects in the first page no longer match the query.  It is up
-to the connector developer to determine how many pages are returned per polling
+to the adapter developer to determine how many pages are returned per polling
 execution.
 
 [Example in the SugarCRM
@@ -211,7 +211,7 @@ Many APIs may not support this behavior.
 This action accepts an object as it's input.  If the incoming object does not
 have an ID, this action will create an object in the system it is connected to.
 If the incoming object does have an ID, this action will update the object in
-the system with the corresponding ID.  The connector should emit the state of
+the system with the corresponding ID.  The adapter should emit the state of
 the object after the update/insert.
 
 The naming convention for this action should be `upsert<objectNameSingular>`. (e.g. `upsertCustomer`)
@@ -248,7 +248,7 @@ One possible implementation for the complete integration can be done by building
 the following flows.  These flows are built exclusively with standardized
 actions and triggers.  The two systems are identified by `Foo` and `Bar` where
 Foo is the system of truth.  It is assumed that each system falls into *Case 1*
-described in the `ConnectorCompletenessChecklist.md`.  Additionally, both Foo
+described in the `AdapterCompletenessChecklist.md`.  Additionally, both Foo
 and Bar are configured with a field, `externalId` to store the id of the object
 once it exists in the other system.  The Mapper is configured to convert the
 data in Foo's format to Bar's format.  Additionally, as the objects pass through
