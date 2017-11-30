@@ -15,7 +15,7 @@ As a business user I would like to keep contact data between CRM, ERP and e-mail
 I could communicate with my customers via multiple channels (direct calls, e-mail spam, etc.) and grow my revenues
 with it.
 
-![overview](https://github.com/openintegrationhub/architecture/blob/master/SmartDataFramework/Assets/overview.png)
+![overview](https://github.com/openintegrationhub/Architecture/blob/master/SmartDataFramework/Assets/Overview.png)
 
 ## Assumptions
 
@@ -30,7 +30,7 @@ Only contact data is kept in sync, no other type of customer data is synchronize
 
 Following diagram represents a graphical schema of the described solution:
 
-![solution](https://github.com/openintegrationhub/architecture/blob/master/SmartDataFramework/Assets/Solution.png)
+![solution](https://github.com/openintegrationhub/Architecture/blob/master/SmartDataFramework/Assets/Solution.png)
 
 The diagram above demonstrates that all the communication goes through the central `Data Hub`. Instead of talking to
 each other each of the services is connected to `Data Hub` via an integration directly. The integration is provided
