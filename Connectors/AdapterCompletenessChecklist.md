@@ -60,6 +60,7 @@ the expected actions and triggers of the adapters.
   - [ ] supply the structure of the incoming objects
 - [ ] `getDeletedObjectsWebhook` including functionality to
   - [ ] supply the list of deletable objects
+  
 **Actions**
 - [ ] `upsertObject` including functionality to
   - [ ] supply the list of writable objects
@@ -79,6 +80,7 @@ the expected actions and triggers of the adapters.
   - [ ] supply the list of readable objects
 - [ ] `getDeletedObjectsPolling` (if possible)
   - [ ] including functionality to supply the list of deletable objects
+  
 **Actions**
 - [ ] `upsertObject` including functionality to
   - [ ] supply the list of writable objects
@@ -101,6 +103,7 @@ the expected actions and triggers of the adapters.
   - [ ] functionality to supply the structure of the incoming objects
 - [ ] `getDeletedObjectsWebhook` including
   - [ ] the static list of deletable objects
+  
 **Actions**
 - [ ] `upsertObject` including
   - [ ] the static list of writable objects
@@ -120,6 +123,7 @@ the expected actions and triggers of the adapters.
   - [ ] the static list of readable objects
 - [ ] `getDeletedObjectsPolling` (if possible)
   - [ ] including the static list of readable objects
+  
 **Actions**
 - [ ] `upsertObject` including
   - [ ] the static list of writable objects
@@ -142,6 +146,7 @@ the expected actions and triggers of the adapters.
   - [ ] the static structure of the incoming objects
 - [ ] `getDeletedObjectsWebhook` including
   - [ ] the static list of deletable objects
+  
 **Actions**
 - [ ] `upsertObject` including
   - [ ] the static list of writable objects
@@ -161,6 +166,7 @@ the expected actions and triggers of the adapters.
   - [ ] the static list of readable objects
 - [ ] `getDeletedObjectsPolling` (if possible)
   - [ ] including the static list of readable objects
+  
 **Actions**
 - [ ] `upsertObject` including
   - [ ] the static list of writable objects
