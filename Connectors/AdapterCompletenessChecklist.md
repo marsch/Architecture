@@ -177,14 +177,14 @@ the expected actions and triggers of the adapters.
   - [ ] the static list of readable objects
 
 # Requirements to Test a Component
-In order for an individual to test the correctness of a adapter, the following
+In order for an individual to test the correctness of an adapter, the following
 resources are required in order to access the API:
 - [ ] An instance/account/tenant for the tester to use.  This includes:
   - [ ] A server with the API is set up (or the API is already hosted in the cloud)
   - [ ] All services/daemons to process the API and webhooks are running
   - [ ] The necessary software licenses are provided to that the software may be
   run in the configuration
-- [ ] The tester must be have permission to:
+- [ ] The tester must have permission to:
   - [ ] Login to the test account/system
   - [ ] Create, Update and Delete objects as required in the UI of the system
   - [ ] Configure API access for the adapter
