@@ -15,7 +15,7 @@ As a business user I would like to keep contact data between CRM, ERP and e-mail
 I could communicate with my customers via multiple channels (direct calls, e-mail spam, etc.) and grow my revenues
 with it.
 
-![overview](https://github.com/openintegrationhub/architecture/blob/master/images/overview.png)
+![overview](https://github.com/openintegrationhub/architecture/blob/master/SmartDataFramework/Assets/overview.png)
 
 ## Assumptions
 
@@ -30,7 +30,7 @@ Only contact data is kept in sync, no other type of customer data is synchronize
 
 Following diagram represents a graphical schema of the described solution:
 
-![solution](https://github.com/openintegrationhub/architecture/blob/master/images/Solution.png)
+![solution](https://github.com/openintegrationhub/architecture/blob/master/SmartDataFramework/Assets/Solution.png)
 
 The diagram above demonstrates that all the communication goes through the central `Data Hub`. Instead of talking to
 each other each of the services is connected to `Data Hub` via an integration directly. The integration is provided
@@ -110,16 +110,16 @@ even between two systems.
 
 ### Q1
 
-How `DataHub` would handle the partent-child relationships. For example in some CRM systems (e.g. Salesforce) we have 
-objects like `Account` (e.g. Fox Interactive Inc. with name, address, and many other fiels) and `Contact` 
+How `DataHub` would handle the partent-child relationships. For example in some CRM systems (e.g. Salesforce) we have
+objects like `Account` (e.g. Fox Interactive Inc. with name, address, and many other fiels) and `Contact`
 (e.g. Homer Simpson with fileds like first,last name, phone number, etc.), both of these objects have distinct internal IDs
-and parent-child relationship between them (via foreign key on `Contact`). 
+and parent-child relationship between them (via foreign key on `Contact`).
 In e-mail marketing system (e.g. Mailchimp) we have a `Subscriber` object with
-fields like first,last names, e-mail as well as company name. `Subscriber` also has a distinct internal ID, however 
+fields like first,last names, e-mail as well as company name. `Subscriber` also has a distinct internal ID, however
 data transformation between these objects would need to map multiple objects IDs into one (Salseforce -> Mailchimp) and
 back (Mailchimp->Salesfroce).
 
 ### Q2
 
-How conflict resolution should work? In case we have changes of the data from two systems that are conflicting. 
+How conflict resolution should work? In case we have changes of the data from two systems that are conflicting.
 Such conflict could happen on the object but also on the field level.
