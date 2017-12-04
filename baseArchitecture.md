@@ -1,7 +1,26 @@
-# Introduction and Goals
-This document describes the design suggestion for OIH.
+# Introduction
+This document describes the architecture of the OIH.
 
-# Architecture Constraints
+# Goals, objectives, and constraints
+## Assumptions
+### Microservices architecture pattern
+The Microservices architecture pattern will be used for all services of the OIH runtime. Reasons:
+* Flexibility for implementation and deployment of individual microservices
+* Scalability during development
+
+### Container virtualization
+Docker will be used as the virtualization solution.
+
+### Service Communication OIH services
+The microservices within the OIH provides http/rest with markup JSON APIs.
+
+### Service Communication ISV applications with OIH
+The API used by connectors to commuicate with the hub is messaging based with markup JSON. The main reason is, that the communication must be asynchronous.
+
+### Master Data Model
+A compatible Master Data Model can be created.
+It must support different ISV applications with regional and language specific models and behaviors.
+
 
 # System Scope and Context
 ![System Scope](https://github.com/openintegrationhub/architecture/blob/master/images/MulticloudIntegration.png)
@@ -104,25 +123,4 @@ Using the optional component "OIH Datahub", it is possible to store master data 
 # Building Block View
 # Runtime View
 # Deployment View
-# Design Decisions/Assumptions
-## Microservices architecture pattern
-The Microservices architecture pattern will be used for all services of the OIH runtime. Reasons:
-* Flexibility for implementation and deployment of individual microservices
-* Scalability during development
-
-## Container virtualization
-Docker will be used as the virtualization solution.
-
-## Service Communication OIH services
-The microservices within the OIH provides http/rest with markup JSON APIs.
-
-## Service Communication ISV applications with OIH
-The API used by connectors to commuicate with the hub is messaging based with markup JSON. The main reason is, that the communication must be asynchronous.
-
-## Master Data Model
-A compatible Master Data Model can be created.
-It must support different ISV applications with regional and language specific models and behaviors.
-
-# Quality Requirements
-# Risks and Technical Debts
 # Glossary
