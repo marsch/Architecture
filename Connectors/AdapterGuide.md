@@ -1,10 +1,10 @@
 # Guide for Creating a Adapter
 
-This document is designed as a guide.  It explains the problems which a
+This document is designed as a guide.  It explains the problems which an
 adapter must solve and the recommended way of solving those problems.
 
 There is an additional document [`AdapterCompletenessChecklist.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/AdapterCompletenessChecklist.md) which is a
-checklist which lists all items which should be done for a fully complete
+checklist that lists all items which should be done for a fully complete
 component.
 
 There is an additional document [`AdapterOpenQuestions.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/AdapterOpenQuestions.md) which discusses
@@ -15,7 +15,7 @@ An **adapter** is a single, reusable piece of functionality that typically
 represents a way to communicate with one system and/or API.  This functionality
 is created by combining code with a file (`component.json`) which describes:
 * **triggers** - functionality which is triggered based on a schedule or by an
- external event (e.g. recieving data through a webhook)
+ external event (e.g. receiving data through a webhook)
 * **actions** - functionality that can be called after the execution of a trigger or another action
 * inputs and outputs for triggers and actions
 * configuration settings (e.g. authentication information of the service, URL of the service)
@@ -65,7 +65,7 @@ a SOAP API, a SQL (or other) DB connection, etc.
 *CRUD: Create, Read, Update and Delete*
 
 # Given an API how should a adapter behave?
-The expected actions and triggers on a component depend on the behavior of the
+The expected actions and triggers of a component depend on the behavior of the
 API.  If the API supports CRUD operations (i.e. the API allows you to create,
 read, update and delete objects) then the following diagram explains which
 triggers and actions should exist in the adapter.  The triggers and actions
@@ -123,8 +123,8 @@ having a scheduled job periodically make calls for changes that may or may not
 have occurred.
 
 # Descriptions of standardized actions or triggers
-It is important to define common rules on how a adapter responds to changes
-and perform actions on generic actions on a domain object.  If adapters follow
+It is important to define common rules on how an adapter responds to changes
+and performs actions on generic actions on a domain object.  If adapters follow
 common behaviors, then it is possible to build integrations by combining
 adapters which are developed by different developers.
 
@@ -148,12 +148,12 @@ message body.
 
 The naming convention for this trigger should be `get<objectNamePlural>Polling`.
 For example, if the trigger was for objects called `Customer` objects, the name
-of the trigger should be `getCustomersPolling`.  If the list of objects in a
-system are generic, it is possible to write a single trigger were the object
+of the trigger should be `getCustomersPolling`.  If the lists of objects in a
+system are generic, it is possible to write a single trigger where the object
 type is a configuration setting.  In this case, the trigger should be named
 `getObjectsPolling`.
 
-In many systems, if the number of matching results is too large then only a
+In many systems, if the number of matching results is too large, then only a
 subset will be returned on the first request (the first page).  Often systems
 can return the results based on some ordering.  (In our case, the useful
 ordering will be by last updated time.)  The system will often provide either a
@@ -177,8 +177,8 @@ webhook.
 
 The naming convention for this trigger should be `get<objectNamePlural>Webhook`.
 For example, if the trigger was for objects called `Customer` objects, the name
-of the trigger should be `getCustomersWebhook`.  If the list of objects in a
-system are generic, it is possible to write a single trigger were the object
+of the trigger should be `getCustomersWebhook`.  If the lists of objects in a
+system are generic, it is possible to write a single trigger where the object
 type is a configuration setting.  In this case, the trigger should be named
 `getObjectsWebhook`.
 
@@ -186,7 +186,7 @@ type is a configuration setting.  In this case, the trigger should be named
 component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/triggers/getObjectsWebhook.js)
 
 ### Get Deleted Objects - Webhook
-This trigger is similar to *Get Objects - Webhook* however, instead of having
+This trigger is similar to *Get Objects - Webhook*, however, instead of having
 information transferred when an object is created or updated, this trigger is
 activated when an object is deleted.  This trigger should emit an event with the
 id of the object that was deleted.
@@ -208,7 +208,7 @@ Many APIs may not support this behavior.
 
 ## Standardized Actions
 ### Upsert Object
-This action accepts an object as it's input.  If the incoming object does not
+This action accepts an object as its input.  If the incoming object does not
 have an ID, this action will create an object in the system it is connected to.
 If the incoming object does have an ID, this action will update the object in
 the system with the corresponding ID.  The adapter should emit the state of
@@ -238,7 +238,7 @@ The naming convention for this action should be `lookup<objectNameSingular>`. (e
 component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/actions/lookupObject.js)
 
 # Example of flows in a complete one way integration between two systems
-A complete one way integration between two systems is an integration is where:
+A complete one way integration between two systems is an integration where:
 * One system is the system of truth
 * Creations, updates and deletions happen only in one system
 * Any creation, update or deletion of an object in that system results in the
