@@ -72,7 +72,7 @@ triggers and actions should exist in the adapter.  The triggers and actions
 should aim at covering 100% of the objects provided by the API.
 
 ![API Classification](https://github.com/openintegrationhub/Architecture/blob/master/Connectors/Assets/ApiClassification.png)
-
+![API Classification3](https://github.com/openintegrationhub/Architecture/blob/master/Connectors/Assets/ApiClassification3.svg)
 A checklist for each case exists in the document `AdapterCompletenessChecklist.md`.
 
 ## Question 1: Is the list of business objects dynamic?
