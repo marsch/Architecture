@@ -7,7 +7,7 @@ There is an additional guide `AdapterGuide.md` which explains how to design a ad
 
 There is an additional document `AdapterCompletenessChecklist.md` which is a
 checklist which lists all items which should be done for a fully complete
-component.
+adapter.
 
 # ID Linking of the Objects Themselves
 When an adapter must alter (such as delete or update) a record in the system
@@ -72,7 +72,7 @@ when first run.  This is problematic for the following reasons:
   1. Stop the polling flow
   1. Start the webhook flow.
 
-An alternative to the current poposal is to:
+An alternative to the current proposal is to:
 * Have polling default to now on the first execution.  (An additional
  possibility is to make the first polling start time configurable.)
 * Create an initial import trigger which when executed uses the appropriate Bulk
@@ -123,7 +123,7 @@ questions:
 * What information needs to be logged so that the logs are useful
 * Should logging formats be standardized to facilitate automatic linking of log events between adapters?
 * What data passing through should be logged?  What data passing through is too sensitive to be logged?
-* Should all adapters be able written to work with (the language specific) a
+* Should all adapters be able to work with (the language specific) a
  logging utility which allows logging settings (such as logging levels and log
 storage mediums) to be uniformly configured between adapters written by
 different developers.  (For example, consider [log4j for
