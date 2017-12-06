@@ -9,7 +9,7 @@ There is an additional folder
 which contains checklists which can be used to verify adapter completeness as
 well as to identify the API provider requirements.
 
-There is a document [`AdapterOperationTypes.md`](https://github.com/openintegrationhub/Architecture/blob/master/Adapters/AdapterOperationTypes.md) which lists the types of operations an adapter can perform as well as the related API functionality which must exist.
+There is a document [`AdapterOperationTypes.md`](https://github.com/openintegrationhub/Architecture/blob/master/Adapters/AdapterOperationTypes.md) which lists the types of operations an adapter can perform as well as the related API functionality which must exist for an efficient implementation of these functionalities.
 
 There is an additional document
 [`OpenQuestions.md`](https://github.com/openintegrationhub/Architecture/blob/master/Adapters/OpenQuestions.md)
