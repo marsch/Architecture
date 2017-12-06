@@ -92,8 +92,8 @@
             },
             "type": {
               "type": "string",
-              "enum": ["polling", "pushing"],
-              "description": "Defines if the trigger is a polling or pushing trigger",
+              "enum": ["polling", "webhook"],
+              "description": "Defines if the trigger is a polling or webhook trigger",
               "default": "polling",
               "examples": [
                 "polling"
