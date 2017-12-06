@@ -3,7 +3,7 @@
     "viewClass": {
       "type": "string",
       "enum": ["TextFieldView", "TextAreaView ", "SelectView", "CheckBoxView", "PasswordFieldView", "OAuthFieldView", "CodeFieldView", "JSONataView", "WebHookPayloadView", "CSVReadView"],
-      "description": "Tbd",
+      "description": "To be done",
       "default": "TextFieldWithNoteView",
       "examples": [
         "TextFieldWithNoteView"
@@ -75,7 +75,7 @@
         "[a-z]+": {
           "type": "object",
           "minProperties": 3,
-          "description" : "Tbd",
+          "description" : "To be done",
           "required": [
             "main",
             "type",
@@ -84,7 +84,7 @@
           "properties": {
             "main": {
               "type": "string",
-              "description": "Tbd",
+              "description": "To be done",
               "default": "Path to trigger.js",
               "examples": [
                 "./lib/triggers/getPetsByStatusWithGenerators.js"
@@ -140,7 +140,7 @@
         "[a-z]+": {
           "type": "object",
           "minProperties": 3,
-          "description" : "Tbd",
+          "description" : "To be done",
           "required": [
             "main",
             "title"
@@ -148,7 +148,7 @@
           "properties": {
             "main": {
               "type": "string",
-              "description": "Tbd",
+              "description": "To be done",
               "default": "Path to action .json",
               "examples": [
                 "./lib/actions/createPetWithPromise.js"
