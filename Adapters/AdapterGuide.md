@@ -1,21 +1,14 @@
 # Guide for Creating a Adapter
 
-This document is designed as a guide.  It explains the problems which a
+This document is designed as a guide.  It explains the problems which an
 adapter must solve and the recommended way of solving those problems.
-
-There is an additional document [`AdapterCompletenessChecklist.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/AdapterCompletenessChecklist.md) which is a
-checklist which lists all items which should be done for a fully complete
-component.
-
-There is an additional document [`AdapterOpenQuestions.md`](https://github.com/openintegrationhub/Architecture/blob/master/adapters/AdapterOpenQuestions.md) which discusses
-potential shortcomings and enhancements to the current adapter approach.
 
 # What is an adapter?
 An **adapter** is a single, reusable piece of functionality that typically
 represents a way to communicate with one system and/or API.  This functionality
 is created by combining code with a file (`component.json`) which describes:
 * **triggers** - functionality which is triggered based on a schedule or by an
- external event (e.g. recieving data through a webhook)
+ external event (e.g. receiving data through a webhook)
 * **actions** - functionality that can be called after the execution of a trigger or another action
 * inputs and outputs for triggers and actions
 * configuration settings (e.g. authentication information of the service, URL of the service)
@@ -30,33 +23,12 @@ flow](https://support.elastic.io/support/solutions/articles/14000032295-what-is-
 # What API Functionality is Necessary to Build a Adapter?
 In order to build a adapter which will perform generic CRUD operations (for
 business objects where business rules allow CRUD operations) the API must expose
-CRUD functionality.  More specifically, the API must allow the following:
-
-**Create Operations**
-- [ ] Given an object that is semantically valid (as per the business rules of
-the application), allow that object to be created.
-
-**Read Operations**
-- [ ] Record the time of the last modification of all objects in the system
-  - [ ] When a sub-object is modified that is not directly fetchable via the API
-  (such as an address of a contact, a variant of a product or a shipment in an
-  order) then the last modification time of the parent object should be updated
-  as well.
-  - [ ] When a link is created, updated or destroyed between two objects, an
-  update must be triggered on at least one of the objects
-- [ ] Allow objects to be fetched based on the modification time
-- [ ] Allow objects to be fetched by ID
-
-**Update Operations**
-- [ ] Given the id of an object which already exists in the system, allow that
-object to be updated either fully or partially
-
-**Delete Operations**
-- [ ] Given an id of an object in the application, delete that object
-- [ ] When an object is deleted in the system, allow information of that
-deletion to be propagated to an integration platform either by:
-  * having deletion events be propagated through webhooks
-  * allowing a list of recently deleted ids to be fetched
+CRUD functionality.  For more details on possible operation types, see
+`AdapterOperationTypes.md`.  In a guideline compliant adapter, all operations
+from the following types should be included:
+* Receive updates from a system
+* Create and update information in a system
+* Lookup Operations
 
 **Note:** Although RESTful APIs are preferred, the API does not necessarily have
 to be a REST API.  It is possible for the above functionality to be exposed via
@@ -65,14 +37,13 @@ a SOAP API, a SQL (or other) DB connection, etc.
 *CRUD: Create, Read, Update and Delete*
 
 # Given an API how should a adapter behave?
-The expected actions and triggers on a component depend on the behavior of the
+The expected actions and triggers of a adapter depend on the behavior of the
 API.  If the API supports CRUD operations (i.e. the API allows you to create,
 read, update and delete objects) then the following diagram explains which
 triggers and actions should exist in the adapter.  The triggers and actions
 should aim at covering 100% of the objects provided by the API.
 
-![API Classification](https://github.com/openintegrationhub/Architecture/blob/master/Connectors/sources/ApiClassification.png)
-
+![API Classification3](https://github.com/openintegrationhub/Architecture/blob/master/Adapters/Assets/ApiClassification.svg)
 A checklist for each case exists in the document `AdapterCompletenessChecklist.md`.
 
 ## Question 1: Is the list of business objects dynamic?
@@ -84,7 +55,7 @@ endpoint which can provide a list of all dynamic objects as well as the
 structure of every object.
 
 If the system has a fixed list of objects, then the adapter developer can
-provide a hardcoded list of objects that the component can interact with.  If
+provide a hardcoded list of objects that the adapter can interact with.  If
 the list of objects is dynamic and it is possible to use the API to learn the
 list of existing objects, the developer should write code to fetch that list and
 [provide that as dynamic
@@ -123,8 +94,8 @@ having a scheduled job periodically make calls for changes that may or may not
 have occurred.
 
 # Descriptions of standardized actions or triggers
-It is important to define common rules on how a adapter responds to changes
-and perform actions on generic actions on a domain object.  If adapters follow
+It is important to define common rules on how an adapter responds to changes
+and performs actions on generic domain objects.  If adapters follow
 common behaviors, then it is possible to build integrations by combining
 adapters which are developed by different developers.
 
@@ -148,12 +119,12 @@ message body.
 
 The naming convention for this trigger should be `get<objectNamePlural>Polling`.
 For example, if the trigger was for objects called `Customer` objects, the name
-of the trigger should be `getCustomersPolling`.  If the list of objects in a
-system are generic, it is possible to write a single trigger were the object
+of the trigger should be `getCustomersPolling`.  If the lists of objects in a
+system are generic, it is possible to write a single trigger where the object
 type is a configuration setting.  In this case, the trigger should be named
 `getObjectsPolling`.
 
-In many systems, if the number of matching results is too large then only a
+In many systems, if the number of matching results is too large, then only a
 subset will be returned on the first request (the first page).  Often systems
 can return the results based on some ordering.  (In our case, the useful
 ordering will be by last updated time.)  The system will often provide either a
@@ -163,7 +134,7 @@ to the adapter developer to determine how many pages are returned per polling
 execution.
 
 [Example in the SugarCRM
-component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/triggers/getObjectsPolling.js)
+adapter](https://github.com/elasticio/sugarcrm-component/blob/master/lib/triggers/getObjectsPolling.js)
 
 ### Get Objects - Webhook
 Instead of being scheduled periodically, this trigger will be triggered upon
@@ -177,16 +148,16 @@ webhook.
 
 The naming convention for this trigger should be `get<objectNamePlural>Webhook`.
 For example, if the trigger was for objects called `Customer` objects, the name
-of the trigger should be `getCustomersWebhook`.  If the list of objects in a
-system are generic, it is possible to write a single trigger were the object
-type is a configuration setting.  In this case, the trigger should be named
-`getObjectsWebhook`.
+of the trigger should be `getCustomersWebhook`.  If different types of objects
+in the system can be fetched in a uniform way, then it is possible to write a
+single trigger where the object type is a configuration setting.  In this case,
+the trigger should be named `getObjectsWebhook`.
 
 [Example in the SugarCRM
-component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/triggers/getObjectsWebhook.js)
+adapter](https://github.com/elasticio/sugarcrm-component/blob/master/lib/triggers/getObjectsWebhook.js)
 
 ### Get Deleted Objects - Webhook
-This trigger is similar to *Get Objects - Webhook* however, instead of having
+This trigger is similar to *Get Objects - Webhook*, however, instead of having
 information transferred when an object is created or updated, this trigger is
 activated when an object is deleted.  This trigger should emit an event with the
 id of the object that was deleted.
@@ -194,7 +165,7 @@ id of the object that was deleted.
 The naming convention for this trigger should be `getDeleted<objectNamePlural>Webhook`.
 
 [Example in the SugarCRM
-component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/triggers/getDeletedObjectsWebhook.js)
+adapter](https://github.com/elasticio/sugarcrm-component/blob/master/lib/triggers/getDeletedObjectsWebhook.js)
 
 ### Get Deleted Objects - Polling
 This trigger is similar to *Get Objects - Polling* however, instead of having
@@ -208,7 +179,7 @@ Many APIs may not support this behavior.
 
 ## Standardized Actions
 ### Upsert Object
-This action accepts an object as it's input.  If the incoming object does not
+This action accepts an object as its input.  If the incoming object does not
 have an ID, this action will create an object in the system it is connected to.
 If the incoming object does have an ID, this action will update the object in
 the system with the corresponding ID.  The adapter should emit the state of
@@ -217,7 +188,7 @@ the object after the update/insert.
 The naming convention for this action should be `upsert<objectNameSingular>`. (e.g. `upsertCustomer`)
 
 [Example in the SugarCRM
-component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/actions/upsertObject.js)
+adapter](https://github.com/elasticio/sugarcrm-component/blob/master/lib/actions/upsertObject.js)
 
 ### Delete Object
 Given an incoming message with an id, delete the corresponding object in the
@@ -227,18 +198,36 @@ deleted.
 The naming convention for this action should be `delete<objectNameSingular>`. (e.g. `deleteCustomer`)
 
 [Example in the SugarCRM
-component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/actions/deleteObject.js)
+adapter](https://github.com/elasticio/sugarcrm-component/blob/master/lib/actions/deleteObject.js)
 
-### Lookup Object
-Given an id, fetches and emits the corresponding object.
+### Lookup Object By Field
+Given an a value for a field in which all values are unique, fetches and emits
+the corresponding object.  If the action is provided with an empty value
+(`undefined`, `null` or the empty string), then this action should emit a new
+message with an empty body.  If the non-empty field matches either 0 or more
+than 1 object, then the connector should throw an error.
 
-The naming convention for this action should be `lookup<objectNameSingular>`. (e.g. `lookupCustomer`)
+The naming convention for this action should be
+`lookup<objectNameSingular>ByField`.
+(e.g. `lookupCustomerByField`)
 
-[Example in the SugarCRM
-component](https://github.com/elasticio/sugarcrm-component/blob/master/lib/actions/lookupObject.js)
+Consider the motivation for this action by considering the following example:
+You want to add a new lead for a company in a CRM.  In order to create a new
+lead which is linked to the company in the CRM, the `upsertLead` action must
+know the CRM's ID for the company.  However, the incoming information doesn't
+have the CRM's ID for the company, only information which identifies the company
+(e.g. Name, Ticker Symbol, Tax number, etc).  The `lookupCompanyByTickerSymbol`
+could be placed before the `upsertLead` action to learn this information with
+the goal of passing this information to the following action.
+
+*Note:* The value of `0` should not be considered as empty since some ecosystems
+such as Microsoft's, use `0` as [a default value for an
+enum](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/enum).
+
+**Example for revised action TBD**
 
 # Example of flows in a complete one way integration between two systems
-A complete one way integration between two systems is an integration is where:
+A complete one way integration between two systems is an integration where:
 * One system is the system of truth
 * Creations, updates and deletions happen only in one system
 * Any creation, update or deletion of an object in that system results in the
@@ -257,4 +246,4 @@ the mapper, the values of `id` and `externalId` are swapped.
 * Foo.getObjectsWebhook -> Mapper -> Bar.upsertObject -> Mapper -> Foo.upsertObject
 * Foo.getDeletedObjectsWebhook -> Mapper -> Bar.deleteObject
 
- The `Foo.upsertObject` step is done to propogate the id of the object in Bar back into Foo.
+ The `Foo.upsertObject` step is done to propagate the id of the object in Bar back into Foo.

@@ -2,7 +2,7 @@
 
 ## Table of Content
 - [General Information](#general-information)
-  - [Manager](#Manager)
+  - [Manager](#manager)
   - [Commiters](#committers)
   - [Contributors](#contributors)
 - [Workgroup Member](#workgroup-member)
