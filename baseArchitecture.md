@@ -1,3 +1,5 @@
+Open Integration Hub – Development of an open source integration plattform with master data management for hybrid small and medium business usage scenarios
+
 # Introduction
 This document describes the architecture of the OIH.
 
@@ -23,7 +25,7 @@ It must support different ISV applications with regional and language specific m
 
 
 # System Scope and Context
-![System Scope](https://github.com/openintegrationhub/architecture/blob/master/images/MulticloudIntegration.png)
+![System Scope](https://github.com/openintegrationhub/Architecture/blob/master/Assets/MulticloudIntegration.png)
 
 ### Top level decomposition
 The OIH consists of three parts:
@@ -86,7 +88,7 @@ Data model: ND
 
 The following diagram shows the hub and spoke architecture for the implementation
 
-![](https://github.com/openintegrationhub/architecture/blob/master/images/SystemScopeV1.1.png)
+![](https://github.com/openintegrationhub/Architecture/blob/master/Assets/SystemScopeV1.1.png)
 
 ## Master Data Model
 The architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
@@ -108,7 +110,7 @@ Messages interchanged by an application and the OIH are routed according to the 
 ISV applications with existing APIs for the exchange of master data are connected using a connector.
 An ISV application without existing APIs needs to implement an API to enable the exchange of data with the OIH.
 
-![](https://github.com/openintegrationhub/architecture/blob/master/images/OIHApplicationV2.png)
+![](https://github.com/openintegrationhub/Architecture/blob/master/Assets/OIHApplicationV2.png)
 
 The application should still use its own data storage to be independent from a connection to the OIH.
 APIs for inbound and outbound data exchange can be implemented.
