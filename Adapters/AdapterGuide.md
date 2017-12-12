@@ -3,6 +3,27 @@
 This document is designed as a guide.  It explains the problems which an
 adapter must solve and the recommended way of solving those problems.
 
+## Table of Contents
+
+- [What is an adapter?](#what-is-an-adapter)
+- [What API Functionality is Necessary to Build a Adapter?](#what-api-functionality-is-necessary-to-build-a-adapter)
+- [Given an API how should a adapter behave?](#given-an-api-how-should-a-adapter-behave)
+  - [Question 1: Is the list of business objects dynamic?](#question-1-is-the-list-of-business-objects-dynamic)
+  - [Question 2: Is the structure of objects dynamic?](#question-2-is-the-structure-of-objects-dynamic)
+  - [Question 3: Does the API support webhooks?](#question-3-does-the-api-support-webhooks)
+- [Descriptions of standardized actions or triggers](#descriptions-of-standardized-actions-or-triggers)
+  - [Standardized Triggers (including webhooks)](#standardized-triggers-including-webhooks)
+    - [Get Objects - Polling](#get-objects---polling)
+    - [Get Objects - Webhook](#get-objects---webhook)
+    - [Get Deleted Objects - Webhook](#get-deleted-objects---webhook)
+    - [Get Deleted Objects - Polling](#get-deleted-objects---polling)
+  - [Standardized Actions](#standardized-actions)
+    - [Upsert Object](#upsert-object)
+    - [Delete Object](#delete-object)
+    - [Lookup Object By Field](#lookup-object-by-field)
+- [Example of flows in a complete one way integration between two systems](#example-of-flows-in-a-complete-one-way-integration-between-two-systems)
+
+
 # What is an adapter?
 An **adapter** is a single, reusable piece of functionality that typically
 represents a way to communicate with one system and/or API.  This functionality

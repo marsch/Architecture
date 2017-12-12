@@ -9,6 +9,21 @@ There is an additional document `AdapterCompletenessChecklist.md` which is a
 checklist which lists all items which should be done for a fully complete
 adapter.
 
+## Table of Contents
+
+- [Open Questions Related To Adapter Design](#open-questions-related-to-adapter-design)
+- [ID Linking of the Objects Themselves](#id-linking-of-the-objects-themselves)
+  - [Shared ID Pattern](#shared-id-pattern)
+  - [Foreign Key pattern](#foreign-key-pattern)
+  - [Third Party System Which Links IDs](#third-party-system-which-links-ids)
+- [ID matching for Linked Objects](#id-matching-for-linked-objects)
+- [Initial Data Fetch](#initial-data-fetch)
+- [Standardized Event Metadata Information](#standardized-event-metadata-information)
+- [Define behavior for handling object merges](#define-behavior-for-handling-object-merges)
+- [Logging](#logging)
+- [Event debouncing](#event-debouncing)
+- [Other Open Questions](#other-open-questions)
+
 # ID Linking of the Objects Themselves
 When an adapter must alter (such as delete or update) a record in the system
 that it is connected to, there needs to be a method to link incoming requests
@@ -82,7 +97,7 @@ to now) and pollingEnd (which defaults to never).  This provides an operational
 tool which can then be used as a recovery mechanism outages to the webhook
 infrastructure.
 
-# Standardized Event Metadata Information:
+# Standardized Event Metadata Information
 Consider the standardized actions and triggers defined in `AdapterGuide.md`
 and the following pieces of relevant system-agnostic information that these
 triggers and actions likely could emit:
