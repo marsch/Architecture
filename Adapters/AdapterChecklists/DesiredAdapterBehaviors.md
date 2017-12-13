@@ -4,7 +4,28 @@ See the section `Given an API how should a adapter behave?` in the document
 case your adapter falls into.  The following sections list each case and then
 the expected actions and triggers of the adapters.
 
-All items in each list is a should have.
+All items in each list is a **should** have.
+
+## Table of Contents
+
+- [Case 1](#case-1)
+  - [Triggers](#triggers)
+  - [Actions](#actions)
+- [Case 2](#case-2)
+  - [Triggers](#triggers-1)
+  - [Actions](#actions-1)
+- [Case 3](#case-3)
+  - [Triggers](#triggers-2)
+  - [Actions](#actions-2)
+- [Case 4](#case-4)
+  - [Triggers](#triggers-3)
+  - [Actions](#actions-3)
+- [Case 5](#case-5)
+  - [Triggers](#triggers-4)
+  - [Actions](#actions-4)
+- [Case 6](#case-6)
+  - [Triggers](#triggers-5)
+  - [Actions](#actions-5)
 
 ## Case 1:
 - The list of business objects is dynamic

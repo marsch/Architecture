@@ -1,5 +1,17 @@
 # Adapter Description and Documentation Guidelines
 
+## Table of Contents
+
+- [Must Have](#must-have)
+  - [README.md](#readmemd)
+- [Should Have](#should-have)
+  - [README.md](#readmemd-1)
+  - [component.json](#componentjson)
+- [Could Have](#could-have)
+  - [README.md](#readmemd-2)
+  - [Other Files](#other-files)
+
+
 Adapter repository Requirements:
 
 # Must Have
