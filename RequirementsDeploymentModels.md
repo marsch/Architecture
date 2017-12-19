@@ -9,6 +9,7 @@
 	- [Automated Administration](#automated-administration)
 		- [Question](#question)
 		- [Problem](#problem)
+	- [Design for Performance](#design-for-performance)
 	- [Elastic Environment](#elastic-environment)
 	- [Rapid Provisioning](#rapid-provisioning)
 		- [Question](#question)
@@ -50,6 +51,13 @@ How can common administrative tasks be carried out consistently and automaticall
 
 ### Problem
 Open integration hub runtimes undergo numerous administrative tasks that need to be repeatedly and efficiently carried out and become subject to human error and slow response times when performed manually.
+
+### Communication Protocol
+As cloud is based on the Internet Protocol (IP), so for an application to be considered, it must use IP as its communication mechanism. Possible protocol: TCP.
+
+### Design for Performance
+It is crucial to ensure scalability. Means, the open integration hub runtime must be adjustable to high huge number of requests. This is especially true for the deployment in a public cloud.
+
 
 ## Elastic Environment
 It is necessary to implement an elastic environment to realize the elasticity characteristic of a cloud.
