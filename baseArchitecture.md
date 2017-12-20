@@ -64,12 +64,6 @@ Configuration services provided by the marketplace to configure the application 
 ## Technical Context
 List of communication partners from a technical perspective
 
-### Partner ISV application using the OIH API
-Protocol: Message Queue/Topic
-
-Markup: JSON
-
-Data model: see MDM concept
 ### Partner ISV application with application specific communication
 Protocol: application specific, e.g. HTTP/Rest, RFC
 
@@ -105,6 +99,7 @@ A connector is a runtime component which has the following characteristics:
 * matches the OIH contract (protocol and master data format)
 * contains a transformation between the two data formats
 * can support both directions for communication
+![](https://github.com/openintegrationhub/Architecture/blob/master/Assets/IntegrationProcess.svg)
 
 ## Routing
 Messages interchanged by an application and the OIH are routed according to the configuration for this connection. The configuration determines:
@@ -113,7 +108,7 @@ Messages interchanged by an application and the OIH are routed according to the 
 
 ## Integrating an ISV application
 ISV applications with existing APIs for the exchange of master data are connected using a connector.
-An ISV application without existing APIs needs to implement an API to enable the exchange of data with the OIH.
+An ISV application without existing APIs needs to implement exchange interfaces to enable the exchange of data with the OIH.
 
 ![](https://github.com/openintegrationhub/Architecture/blob/master/Assets/OIHApplicationV2.png)
 
