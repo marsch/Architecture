@@ -122,6 +122,5 @@ Using the optional component "OIH Smart Data Framework", it is possible to store
 * Backup and Recovery
 * Information Lifecycle Management (e.g. [GDPR](https://gdpr-info.eu/))
 
-# Building Block and Runtime View
-The Microservice architecture pattern is used to create building blocks.
-https://github.com/openintegrationhub/Microservices
+# Building Block
+![](Assets/buildingBlocks.png)
