@@ -1,65 +1,29 @@
+# Base Architecture
 Open Integration Hub – Development of an open source integration plattform with master data management for hybrid small and medium business usage scenarios
 
 # Table of Contents
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
-- [Assumptions and constraints](#assumptions-and-constraints)
-	- [Microservices architecture pattern](#microservices-architecture-pattern)
-	- [Container virtualization](#container-virtualization)
-	- [Service Communication OIH services](#service-communication-oih-services)
-	- [Service Communication ISV applications with OIH](#service-communication-isv-applications-with-oih)
-	- [Master Data Model](#master-data-model)
-- [System Scope and Context](#system-scope-and-context)
-	- [Business Context](#business-context)
-		- [Partner ISV application](#partner-isv-application)
-		- [Partner ISV application user](#partner-isv-application-user)
-	- [Technical Context](#technical-context)
-		- [Partner ISV application with application specific communication](#partner-isv-application-with-application-specific-communication)
-		- [Partner Market place configuration service](#partner-market-place-configuration-service)
-- [Solution Strategy](#solution-strategy)
-	- [Master Data Model](#master-data-model)
-	- [Application specific contracts using connectors](#application-specific-contracts-using-connectors)
-	- [Routing](#routing)
-	- [Integrating an ISV application](#integrating-an-isv-application)
-	- [Data Storage](#data-storage)
-- [Building Block](#building-block)
-	- [Top level decomposition](#top-level-decomposition)
-		- [OIH runtime](#oih-runtime)
-		- [Smart Data Framework](#smart-data-framework)
-		- [OIH Tooling for development and operations](#oih-tooling-for-development-and-operations)
-	- [Level 1](#level-1)
-		- [Motivation](#motivation)
-		- [Contained Building Blocks](#contained-building-blocks)
-	- [Level 2](#level-2)
-		- [Motivation](#motivation)
-		- [Contained Building Blocks](#contained-building-blocks)
-
-<!-- /TOC -->
 
 # Introduction
 This document describes the architecture of the OIH.
 
-# Assumptions and constraints
-## Microservices architecture pattern
+# Assumptions and Constraints
+## Microservices Architecture Pattern
 The Microservices architecture pattern will be used for all services of the OIH runtime. Reasons:
 * Flexibility for implementation and deployment of individual microservices
 * Scalability during development
 
-## Container virtualization
+## Container Virtualization
 Docker will be used as the virtualization solution.
 
-## Service Communication OIH services
+## Service Communication OIH Services
 The microservices within the OIH provides http/rest with markup JSON APIs.
 
-## Service Communication ISV applications with OIH
+## Service Communication ISV Applications with OIH
 The API used by connectors to commuicate with the hub is messaging based with markup JSON. The main reason is, that the communication must be asynchronous.
 
 ## Master Data Model
 A compatible Master Data Model can be created.
 It must support different ISV applications with regional and language specific models and behaviors.
-
 
 # System Scope and Context
 ![System Scope](Assets/MulticloudIntegration.png)
@@ -67,12 +31,12 @@ It must support different ISV applications with regional and language specific m
 ## Business Context
 List of communication partners from a business perspective
 
-### Partner ISV application
+### Partner ISV Application
 The ISV application which is connected to the OIH.
 Domain specific services for the domains:
 * Customer
 * Product
-### Partner ISV application user
+### Partner ISV Application User
 The end customer who uses one of the connected ISV applications.
 Configuration services provided by the marketplace to configure the application in an OIH context:
 * Register application to OIH
@@ -81,14 +45,14 @@ Configuration services provided by the marketplace to configure the application 
 ## Technical Context
 List of communication partners from a technical perspective
 
-### Partner ISV application with application specific communication
+### Partner ISV Application with Application Specific Communication
 Protocol: application specific, e.g. HTTP/Rest, RFC
 
 Markup: application specific, e.g. SOAP, XML, CSV, iDoc
 
 Data model: application specific
 
-### Partner Market place configuration service
+### Partner Market Place Configuration Service
 Protocol: ND
 
 Markup: JSON
@@ -111,7 +75,7 @@ In the main scenario, all connected applications have a corresponding Connector 
 ## Master Data Model
 The hub and spoke architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
 
-## Application specific contracts using connectors
+## Application Specific Contracts using Connectors
 To meet as many application specific contracts as possible, a connector is used.
 A connector is a runtime component which has the following characteristics:
 * matches the application specific contract (protocol and format)
@@ -124,7 +88,7 @@ Messages interchanged by an application and the OIH are routed according to the 
 * does the connections accept inbound and/or outbound messages
 * which connected applications are allowed to communicate using this connection
 
-## Integrating an ISV application
+## Integrating an ISV Application
 ISV applications with existing APIs for the exchange of master data are connected using a connector.
 An ISV application without existing APIs needs to implement exchange interfaces to enable the exchange of data with the OIH.
 
@@ -143,7 +107,7 @@ Using the optional component "OIH Smart Data Framework", it is possible to store
 # Building Block
 ![](Assets/buildingBlocks.png)
 
-## Top level decomposition
+## Top level Decomposition
 The OIH consists of three parts:
 * OIH runtime
 * OIH Smart Data Framework
@@ -151,7 +115,7 @@ The OIH consists of three parts:
 
 The decision to this decomposition considers that the Smart Data Framework is an optional component which is not necessary to deploy, run and use the OIH. The tooling is needed to configure OIH artifacts and initialize the OIH runtime.
 
-### OIH runtime
+### OIH Runtime
 The OIH runtime is the central part of the OIH. It must be deployable in a cloud environment and in onsite customer environments.
 It contains all services necessary to connect an application to the OIH runtime and route messages to connected applications.
 
@@ -162,7 +126,7 @@ If the contract of the message broker interface cannot be met by a system or app
 ### Smart Data Framework
 The OIH Smart Data Framework is an optional component providing hub and spoke style communication using a master data schema and providing management features like reporting and auditing.
 
-### OIH Tooling for development and operations
+### OIH Tooling for Development and Operations
 The tools are used to create and configure the runtime artifacts for the OIH runtime like connectors and connections.
 
 ## Level 1
