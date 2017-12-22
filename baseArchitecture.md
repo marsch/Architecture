@@ -30,10 +30,12 @@ It must support different ISV applications with regional and language specific m
 List of communication partners from a business perspective
 
 ### Partner ISV application
+The ISV application which is connected to the OIH.
 Domain specific services for the domains:
 * Customer
 * Product
 ### Partner ISV application user
+The end customer who uses one of the connected ISV applications.
 Configuration services provided by the marketplace to configure the application in an OIH context:
 * Register application to OIH
 * Configure exchangeable data
@@ -64,7 +66,9 @@ There will be three usage scenarios:
 
 The following diagram shows the hub and spoke architecture for the implementation
 
-![](Assets/SystemScopeV1.1.png)
+![](Assets/HubAndSpoke.png)
+
+In the main scenario, all connected applications have a corresponding Connector which translates between the application specific interface of the application and the master data model of the OIH. 
 
 ## Master Data Model
 The hub and spoke architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
