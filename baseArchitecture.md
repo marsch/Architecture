@@ -1,24 +1,62 @@
 Open Integration Hub – Development of an open source integration plattform with master data management for hybrid small and medium business usage scenarios
 
+# Table of Contents
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Assumptions and constraints](#assumptions-and-constraints)
+	- [Microservices architecture pattern](#microservices-architecture-pattern)
+	- [Container virtualization](#container-virtualization)
+	- [Service Communication OIH services](#service-communication-oih-services)
+	- [Service Communication ISV applications with OIH](#service-communication-isv-applications-with-oih)
+	- [Master Data Model](#master-data-model)
+- [System Scope and Context](#system-scope-and-context)
+	- [Business Context](#business-context)
+		- [Partner ISV application](#partner-isv-application)
+		- [Partner ISV application user](#partner-isv-application-user)
+	- [Technical Context](#technical-context)
+		- [Partner ISV application with application specific communication](#partner-isv-application-with-application-specific-communication)
+		- [Partner Market place configuration service](#partner-market-place-configuration-service)
+- [Solution Strategy](#solution-strategy)
+	- [Master Data Model](#master-data-model)
+	- [Application specific contracts using connectors](#application-specific-contracts-using-connectors)
+	- [Routing](#routing)
+	- [Integrating an ISV application](#integrating-an-isv-application)
+	- [Data Storage](#data-storage)
+- [Building Block](#building-block)
+	- [Top level decomposition](#top-level-decomposition)
+		- [OIH runtime](#oih-runtime)
+		- [Smart Data Framework](#smart-data-framework)
+		- [OIH Tooling for development and operations](#oih-tooling-for-development-and-operations)
+	- [Level 1](#level-1)
+		- [Motivation](#motivation)
+		- [Contained Building Blocks](#contained-building-blocks)
+	- [Level 2](#level-2)
+		- [Motivation](#motivation)
+		- [Contained Building Blocks](#contained-building-blocks)
+
+<!-- /TOC -->
+
 # Introduction
 This document describes the architecture of the OIH.
 
 # Assumptions and constraints
-### Microservices architecture pattern
+## Microservices architecture pattern
 The Microservices architecture pattern will be used for all services of the OIH runtime. Reasons:
 * Flexibility for implementation and deployment of individual microservices
 * Scalability during development
 
-### Container virtualization
+## Container virtualization
 Docker will be used as the virtualization solution.
 
-### Service Communication OIH services
+## Service Communication OIH services
 The microservices within the OIH provides http/rest with markup JSON APIs.
 
-### Service Communication ISV applications with OIH
+## Service Communication ISV applications with OIH
 The API used by connectors to commuicate with the hub is messaging based with markup JSON. The main reason is, that the communication must be asynchronous.
 
-### Master Data Model
+## Master Data Model
 A compatible Master Data Model can be created.
 It must support different ISV applications with regional and language specific models and behaviors.
 
@@ -68,7 +106,7 @@ The following diagram shows the hub and spoke architecture for the implementatio
 
 ![](https://github.com/openintegrationhub/Architecture/blob/master/Assets/HubAndSpoke.png)
 
-In the main scenario, all connected applications have a corresponding Connector which translates between the application specific interface of the application and the master data model of the OIH. 
+In the main scenario, all connected applications have a corresponding Connector which translates between the application specific interface of the application and the master data model of the OIH.
 
 ## Master Data Model
 The hub and spoke architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
@@ -142,8 +180,8 @@ The capability to transform content and format should be provided in a flexible 
 To transform to the OIH master data model or to match directly to other applicationspecific formats, the optional component Transformator is used.
 ### Contained Building Blocks
 - Adapter
-resuable component to match the application specific contract by protocol 
+resuable component to match the application specific contract by protocol
 - Transformator
-resuable component to match the application specific contract by format 
+resuable component to match the application specific contract by format
 - storage of raw data
 the raw data send by the application is stored without any conversion or transformation.
