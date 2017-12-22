@@ -3,8 +3,7 @@ Open Integration Hub – Development of an open source integration plattform wit
 # Introduction
 This document describes the architecture of the OIH.
 
-# Goals, objectives, and constraints
-## Assumptions
+# Assumptions and constraints
 ### Microservices architecture pattern
 The Microservices architecture pattern will be used for all services of the OIH runtime. Reasons:
 * Flexibility for implementation and deployment of individual microservices
@@ -55,6 +54,49 @@ Protocol: ND
 Markup: JSON
 
 Data model: ND
+
+# Solution Strategy
+
+There will be three usage scenarios:
+- Main scenario: The Open Integration Hub including the Smart Data Framework with a given schema
+- Derived scenario (Form the main scenario): The schema can be replaced/modified
+- Minimal scenario: The Open Integration Hub provides many to many (m to n) integration without the schema / Smart Data Framework. For this scenario it is necessary that the user performs the mapping.
+
+The following diagram shows the hub and spoke architecture for the implementation
+
+![](Assets/SystemScopeV1.1.png)
+
+## Master Data Model
+The hub and spoke architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
+
+## Application specific contracts using connectors
+A connector is a runtime component which has the following characteristics:
+* matches the application specific contract (protocol and format)
+* matches the OIH contract (protocol and master data format)
+* contains a transformation between the two data formats
+* can support both directions for communication
+
+## Routing
+Messages interchanged by an application and the OIH are routed according to the configuration for this connection. The configuration determines:
+* does the connections accept inbound and/or outbound messages
+* which connected applications are allowed to communicate using this connection
+
+## Integrating an ISV application
+ISV applications with existing APIs for the exchange of master data are connected using a connector.
+An ISV application without existing APIs needs to implement exchange interfaces to enable the exchange of data with the OIH.
+
+![](Assets/OIHApplicationV2.png)
+
+The application should still use its own data storage to be independent from a connection to the OIH.
+APIs for inbound and outbound data exchange can be implemented.
+
+## Data Storage
+Using the optional component "OIH Smart Data Framework", it is possible to store master data within the OIH. The Smart Data Framework provides capabilities like:
+* Auditing
+* Reporting
+* Backup and Recovery
+* Information Lifecycle Management (e.g. [GDPR](https://gdpr-info.eu/))
+
 # Building Block
 ![](Assets/buildingBlocks.png)
 
@@ -100,45 +142,3 @@ resuable component to match the application specific contract by protocol
 resuable component to match the application specific contract by format 
 - storage of raw data
 the raw data send by the application is stored without any conversion or transformation.
-
-# Solution Strategy
-
-There will be three usage scenarios:
-- Main scenario: The Open Integration Hub including the Smart Data Framework with a given schema
-- Derived scenario (Form the main scenario): The schema can be replaced/modified
-- Minimal scenario: The Open Integration Hub provides many to many (m to n) integration without the schema / Smart Data Framework. For this scenario it is necessary that the user performs the mapping.
-
-The following diagram shows the hub and spoke architecture for the implementation
-
-![](Assets/SystemScopeV1.1.png)
-
-## Master Data Model
-The hub and spoke architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
-
-## Application specific contracts using connectors
-A connector is a runtime component which has the following characteristics:
-* matches the application specific contract (protocol and format)
-* matches the OIH contract (protocol and master data format)
-* contains a transformation between the two data formats
-* can support both directions for communication
-
-## Routing
-Messages interchanged by an application and the OIH are routed according to the configuration for this connection. The configuration determines:
-* does the connections accept inbound and/or outbound messages
-* which connected applications are allowed to communicate using this connection
-
-## Integrating an ISV application
-ISV applications with existing APIs for the exchange of master data are connected using a connector.
-An ISV application without existing APIs needs to implement exchange interfaces to enable the exchange of data with the OIH.
-
-![](Assets/OIHApplicationV2.png)
-
-The application should still use its own data storage to be independent from a connection to the OIH.
-APIs for inbound and outbound data exchange can be implemented.
-
-## Data Storage
-Using the optional component "OIH Smart Data Framework", it is possible to store master data within the OIH. The Smart Data Framework provides capabilities like:
-* Auditing
-* Reporting
-* Backup and Recovery
-* Information Lifecycle Management (e.g. [GDPR](https://gdpr-info.eu/))
