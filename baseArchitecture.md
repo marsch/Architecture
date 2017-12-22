@@ -66,7 +66,7 @@ There will be three usage scenarios:
 
 The following diagram shows the hub and spoke architecture for the implementation
 
-![](Assets/HubAndSpoke.png)
+![](https://github.com/openintegrationhub/Architecture/blob/master/Assets/HubAndSpoke.png)
 
 In the main scenario, all connected applications have a corresponding Connector which translates between the application specific interface of the application and the master data model of the OIH. 
 
@@ -74,6 +74,7 @@ In the main scenario, all connected applications have a corresponding Connector 
 The hub and spoke architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
 
 ## Application specific contracts using connectors
+To meet as many application specific contracts as possible, a connector is used.
 A connector is a runtime component which has the following characteristics:
 * matches the application specific contract (protocol and format)
 * matches the OIH contract (protocol and master data format)
@@ -89,7 +90,7 @@ Messages interchanged by an application and the OIH are routed according to the 
 ISV applications with existing APIs for the exchange of master data are connected using a connector.
 An ISV application without existing APIs needs to implement exchange interfaces to enable the exchange of data with the OIH.
 
-![](Assets/OIHApplicationV2.png)
+![](Assets/IntegratingISVApplication.png)
 
 The application should still use its own data storage to be independent from a connection to the OIH.
 APIs for inbound and outbound data exchange can be implemented.
