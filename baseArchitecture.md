@@ -2,6 +2,43 @@
 Open Integration Hub – Development of an open source integration plattform with master data management for hybrid small and medium business usage scenarios
 
 # Table of Contents
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Base Architecture](#base-architecture)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Assumptions and Constraints](#assumptions-and-constraints)
+	- [Microservices Architecture Pattern](#microservices-architecture-pattern)
+	- [Container Virtualization](#container-virtualization)
+	- [Service Communication OIH Services](#service-communication-oih-services)
+	- [Service Communication ISV Applications with OIH](#service-communication-isv-applications-with-oih)
+	- [Master Data Model](#master-data-model)
+- [System Scope and Context](#system-scope-and-context)
+	- [Business Context](#business-context)
+		- [Partner ISV Application](#partner-isv-application)
+		- [Partner ISV Application User](#partner-isv-application-user)
+	- [Technical Context](#technical-context)
+		- [Partner ISV Application with Application Specific Communication](#partner-isv-application-with-application-specific-communication)
+		- [Partner Market Place Configuration Service](#partner-market-place-configuration-service)
+- [Solution Strategy](#solution-strategy)
+	- [Master Data Model](#master-data-model)
+	- [Application Specific Contracts using Connectors](#application-specific-contracts-using-connectors)
+	- [Routing](#routing)
+	- [Integrating an ISV Application](#integrating-an-isv-application)
+	- [Data Storage](#data-storage)
+- [Building Block](#building-block)
+	- [Top level Decomposition](#top-level-decomposition)
+		- [OIH Runtime](#oih-runtime)
+		- [Smart Data Framework](#smart-data-framework)
+		- [OIH Tooling for Development and Operations](#oih-tooling-for-development-and-operations)
+	- [Level 1](#level-1)
+		- [Motivation](#motivation)
+		- [Contained Building Blocks](#contained-building-blocks)
+	- [Level 2](#level-2)
+		- [Motivation](#motivation)
+		- [Contained Building Blocks](#contained-building-blocks)
+
+<!-- /TOC -->
 
 # Introduction
 This document describes the architecture of the OIH.
