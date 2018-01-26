@@ -35,7 +35,7 @@
 
 | Workgroup  | Member Name | Role |
 | ------------- | ------------- | ------------- |
-| Architecture  | Franz  | **Manager & Committer**  |
+| Architecture  | Franz  | **Manager**  |
 |  | Igor  | Committer  |
 |  | Selim  | Committer  |
 |  | Susanne  | Committer  |
