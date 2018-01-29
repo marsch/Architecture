@@ -12,6 +12,9 @@ Everyone will create and update their own tasks. We will start as soon as we hav
 ## workgroup calls
 Agenda topics for the workgroup calls can be sent to the workgroup manager.
 
+## git structure
+Entry point to the architecture repository will be readme.md. It should contain links to important documents.
+
 ## Next Steps
 - Susanne:
   - Prepare presentation and open questions for conflict management
