@@ -1,6 +1,6 @@
 # Protocol
 
-**Attendees:** Igor, Selim, Susanne, Franz, Raphael, Phillip
+**Attendees:** Igor, Selim, Susanne, Franz, Raphael, Philipp
 
 ## Protocol from 12.01.2018
 accepted
