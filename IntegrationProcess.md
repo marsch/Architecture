@@ -19,7 +19,7 @@ In the following one exemplary integration proccess is described.
 3. The adapter syntactically transforms the data from the proprieraty format (e.g. XML, JS, CSV) into a JSON objects
     - The adapter also ensures that data is normalized (e.g. same format for date-times)
 4. The adapter pushes the syntactically transformed data onto a message queue
-5. The data is processed in the prescribed order within the message queue
+5. The data is processed within the message queue
 6. The transformer semantically transforms the incoming JSON object from the source model format into the Open Integration Hub master data model format
 7. The transformer send the semantically transformed data to the OIH API v1
 8. The data set is processed within the Open Integration Hub
