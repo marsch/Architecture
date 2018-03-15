@@ -34,7 +34,7 @@ The following illustrations vizualizes the integration proccess:
 
 _Note:_ The dashed lines symbolize optional parts of the Open Integration Hub.
 
-![IntegrationProcess](Assets/OihIntegrationProcess.svg)
+![IntegrationProcess](Assets/OihIntegrationProcessUniDirectional.svg)
 
 ## Integration Process Components
 ### Connector
