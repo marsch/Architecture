@@ -1,0 +1,207 @@
+openapi: 3.0.0
+info:
+  title: OIH Smart Data Framework REST API
+  description: REST API for communication with the Smart Data Framework.
+  version: 0.0.1
+paths:
+  /domains:
+    get:
+      summary: Retrieve the available domains for the authenticated user
+      responses:
+        '200':
+          description: 'List of domains the user has access to'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Domains"
+    post:
+      summary: Create a new Domain.
+      description: Creates a new Domain for the authenticated user.
+      responses:
+        '200':
+          description: 'The new Domain'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Domain"
+  /domains/{domainId}:
+    get:
+      summary: Retrieve a domain with given ID.
+      description: Provides details of a domain with a given ID.
+      responses:
+        '200':
+          description: 'Domain with given ID'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Domain"
+    put:
+      summary: Update a domain by ID.
+      description: Updates details of a domain with a given ID.
+      responses:
+        '200':
+          description: 'The updated Domain'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Domain"
+  /models:
+    get:
+      summary: Retrieve the available models for the authenticated user.
+      responses:
+        '200':    # status code
+          description: List of models the user has access to
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/AnyModels"
+    post:
+      summary: Create anew a model.
+      description: Create a new model for authenticated usert.
+      responses:
+        '200':    # status code
+          description: Created Model
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/AnyModel"
+  /models/{modelId}:
+    get:
+      summary: Retrieve a model by ID.
+      description: Provides details of a model with a given ID.
+      responses:
+        '200':    # status code
+          description: Model with given ID
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/AnyModel"
+    put:
+      summary: Update a model with given ID.
+      description: Updates a model with given ID.
+      responses:
+        '200':    # status code
+          description: Updated Model
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/AnyModel"
+  /data:
+    post:
+      summary: Send an object for persistence
+      requestBody:
+        description: Object to to be persisted 
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewData' 
+      responses:
+        '200':
+          description: 'Data creation response'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Data'
+  /webhooks:
+    post:
+      summary: Add a new webhook to receive notifications about data changes
+      requestBody:
+        description: 'Webhook payload'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookSubscription'
+      responses:
+        '200':
+          description: 'Webhook subscription reponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookSubscriptionResponse'
+    delete:
+      summary: Delete an existing webhook subscrption by id
+      responses:
+        '204':
+          description: The resource was deleted successfully.
+                  
+components:
+  schemas:
+      Domains:
+        type: array
+        items:
+          $ref: "#/components/schemas/Domain"
+          
+      Domain:
+        required:
+          - id
+          - name
+        properties:
+          id:
+            type: string
+          name:
+            type: string
+          description:
+            type: string
+            
+      AnyModel:
+        anyOf:
+          - type: object
+          
+      AnyModels:
+        type: array
+        items:
+          $ref: "#/components/schemas/AnyModel"
+          
+      NewData:
+        type: object
+        required:
+          - model
+        properties:
+          model:
+            type: string
+          data:
+            type: object
+            
+      Data:
+        required:
+          - id
+          - name
+        properties:
+          id:
+            type: string
+          content:
+            type: object
+            
+      WebhookSubscription:
+        required:
+          - model
+          - url
+          - events
+        properties:
+          model:
+            type: string
+          url:
+            type: string
+          events:
+            type: array
+            items:
+              type: string
+              enum: [create, update, delete]
+          description:
+            type: string
+            
+      WebhookSubscriptionResponse:
+        required:
+          - id
+        properties:
+          id:
+            type: string
+            
+      WebhookCancelation:
+        required:
+          - id
+        properties:
+          id:
+            type: string
