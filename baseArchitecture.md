@@ -142,7 +142,7 @@ Using the optional component "OIH Smart Data Framework", it is possible to store
 * Information Lifecycle Management (e.g. [GDPR](https://gdpr-info.eu/))
 
 # Building Block
-![](Assets/buildingBlocks.png)
+![](Assets/buildingBlocks2.png)
 
 ## Top level Decomposition
 The OIH consists of three parts:
