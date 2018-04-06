@@ -56,3 +56,11 @@
 ## Contribution
 
 Before you contribute, please read the [contribution guideline](https://github.com/openintegrationhub/Architecture/blob/master/CONTRIBUTING.md).
+
+## architecture documents
+* base architecture https://github.com/openintegrationhub/Architecture/blob/master/baseArchitecture.md
+* integration process: https://github.com/openintegrationhub/Architecture/blob/master/IntegrationProcess.md
+* smart data framework: https://github.com/openintegrationhub/Architecture/blob/master/SmartDataFramework/README.md
+
+## poc roadmap
+https://github.com/openintegrationhub/Architecture/blob/master/Roadmap/RoadmapV1.md
