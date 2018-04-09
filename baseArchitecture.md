@@ -52,9 +52,6 @@ The Microservices architecture pattern will be used for all services of the OIH 
 ## Container Virtualization
 Docker will be used as the virtualization solution.
 
-## Service Communication OIH Services
-The microservices within the OIH provides http/rest with markup JSON APIs.
-
 ## Service Communication ISV Applications with OIH
 The API used by connectors to commuicate with the hub is messaging based with markup JSON. The main reason is, that the communication must be asynchronous.
 
