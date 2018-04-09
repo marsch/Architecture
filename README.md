@@ -1,66 +1,60 @@
 # Introduction
 
 ## Table of Content
-- [General Information](#general-information)
-  - [Manager](#manager)
-  - [Commiters](#committers)
-  - [Contributors](#contributors)
-- [Workgroup Member](#workgroup-member)
+- [Introduction](#introduction)
 
-- [Workgroup Content](#workgroup-content)
+- [Content](#content)
+
+  - [Folders](#folders)
+  - [Documents](#documents)
+
+- [Workgroup](#workgroup)
+
+  - [Information](#information)
+  - [Member](#member)
+
+- [Wording](#wording)
 
 - [Contribution](#contribution)
 
-## General Information
-- Each workgroup has at least one **status call** every two weeks
-- **Every Committer** must attend the status call
+## Introduction
 
-### Manager
-- Each workgroup has one manager - this manager is elected every 6 month by all Committers within the workgroup (re-election possible)
-- The manager moderates discussions, documents decisions and coordinates activities, content and appointments
-- Only the manager is allowed to merge content into the master branch
-- Is part of one of the comittees
+This repository contains architecture documents for the OIH. 
 
-### Committers
-- Decisions within a workgroup are made by the Committers on democratic basis (unanimity)
-- Committers can chosse which contributors shall become committers (Committees have to agree on choice)
-- Need to actively contribute to the workgroup
-
-### Contributors
-- Contributors contribute to the projects but do not have a vote
-- Contributors can apply to get a vote and become a Committer
+## Content
+#### Folders
+- ´Roadmap´: contains information regarding the planned poc roadmap
+- ´Protocols´: contains meeting protocols of the workgroup meetings
 
 
-## Workgroup Member
+#### Documents
+- base architecture https://github.com/openintegrationhub/Architecture/blob/master/baseArchitecture.md
+- integration process: https://github.com/openintegrationhub/Architecture/blob/master/IntegrationProcess.md
+- smart data framework: https://github.com/openintegrationhub/Architecture/blob/master/SmartDataFramework/README.md
+- poc roadmap: https://github.com/openintegrationhub/Architecture/blob/master/Roadmap/RoadmapV1.md
+
+
+## Workgroup
+#### Information
+- Each workgroup has atleast one status call every two weeks
+- Every comitter must attend the status call
+- The governance model defines the workgroup members' roles into managers, committers or contributors
+
+
+#### Member
 
 | Workgroup  | Member Name | Role |
 | ------------- | ------------- | ------------- |
-| Architecture  | Franz  | **Manager**  |
+| Architecture  | Franz  | Manager  |
 |  | Igor  | Committer  |
 |  | Selim  | Committer  |
 |  | Susanne  | Committer  |
 |  | Lutz  | Contributor  |
 
-## Workgroup Content
+## Wording
 
-| Workgroup  | Architecture |
-| ------------- | ------------- |
-| Content  | Openintegrationhub architecture |
-|  | Integration Services  |
-|  | OIH Implementation  |  
-| APs | 2.08 |
-|  | 2.09 |
-|  | 2.10 |
-|  | 4.20 |
+Within the project different terms and abbreviations are frequently used. All terms and abbrevations are explained within the [glossary](https://github.com/openintegrationhub/Connectors/wiki/Glossary) and our [list of abbrevations](https://github.com/openintegrationhub/Connectors/wiki/Abbreviations).
 
 ## Contribution
 
-Before you contribute, please read the [contribution guideline](https://github.com/openintegrationhub/Architecture/blob/master/CONTRIBUTING.md).
-
-## architecture documents
-* base architecture https://github.com/openintegrationhub/Architecture/blob/master/baseArchitecture.md
-* integration process: https://github.com/openintegrationhub/Architecture/blob/master/IntegrationProcess.md
-* smart data framework: https://github.com/openintegrationhub/Architecture/blob/master/SmartDataFramework/README.md
-
-## poc roadmap
-https://github.com/openintegrationhub/Architecture/blob/master/Roadmap/RoadmapV1.md
+Before you contribute, please read the [contribution guideline](https://github.com/openintegrationhub/data-and-domain-models/blob/master/CONTRIBUTING.md).
