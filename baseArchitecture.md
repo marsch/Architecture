@@ -106,6 +106,10 @@ The following diagram shows the hub and spoke architecture for the implementatio
 
 In the main scenario, all connected applications have a corresponding Connector which translates between the application specific interface of the application and the master data model of the OIH.
 
+![](https://github.com/openintegrationhub/Architecture/blob/7fb4b043b2ffbc6c9681b21800fb3804f7201bae/Assets/ApiOverview.svg)
+
+In the Minimal scenario the connector component can bypass the smart data framework and communicate directly with the connector component of another application
+
 ## Master Data Model
 The hub and spoke architecture relies heavily on a master data model. This model is created to support the integration between all applications using a common entity. To support more applications, the model will be extended in a community driven process. To enable a flexible release process for ISV applations and connectors, changes to the master data model must be backward compatible.
 
