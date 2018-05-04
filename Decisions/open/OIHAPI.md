@@ -31,3 +31,11 @@ The synchron api request/response cycle must be managed (e.g. http polling, call
 One to many communication is not supported.
 Scalability is achieved using a load balancing infrastructure component.
 
+
+## Alternative sdk
+
+### Decision
+no decision yet
+
+### Consequences
+A sdk will be used for the communication between connectors.
