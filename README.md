@@ -1,4 +1,10 @@
-# Introduction
+<p align="center">
+  <img src="https://github.com/openintegrationhub/Microservices/blob/master/Assets/medium-oih-einzeilig-zentriert.jpg" alt="Sublime's custom image" width="400"/>
+</p>
+
+The revolution in data synchronization — the Open Integration Hub enables simple data synchronization between any software applications and thus accelerates digitalisation 
+
+# Architecture
 
 ## Table of Content
 - [Introduction](#introduction)
@@ -19,19 +25,22 @@
 
 ## Introduction
 
-This repository contains architecture documents for the OIH. 
+This repository contains architecture documents for the Open Integration Hub, including a collection of reached and open decisions for the architecture, the poc roadmap and the first draft of the integration of the smart data framework into the data hub 
 
 ## Content
 #### Folders
-- ´Roadmap´: contains information regarding the planned poc roadmap
-- ´Protocols´: contains meeting protocols of the workgroup meetings
-
+- `Decisions`: Collection of all open and closed decisions regarding the architecture, including a template for further open decisions 
+- `IntegrationFramework`: tbd — coming soong
+- `OrchestrationAndScheduling`: tbd — coming soon
+- `Protocols`: Collection of all workgroup protocols starting in 11-2017
+- `Roadmap`: Contains information regarding the planned poc roadmap
+- `SmartDataFramework`: Explains the integration scenario of the SDF into the data hub
 
 #### Documents
-- base architecture https://github.com/openintegrationhub/Architecture/blob/master/baseArchitecture.md
-- integration process: https://github.com/openintegrationhub/Architecture/blob/master/IntegrationProcess.md
-- smart data framework: https://github.com/openintegrationhub/Architecture/blob/master/SmartDataFramework/README.md
-- poc roadmap: https://github.com/openintegrationhub/Architecture/blob/master/Roadmap/RoadmapV1.md
+- `CONTRIBUTING`: Contains the contribution guideline
+- `Integration Process`: Step-by-step manual for the integration process of data propagation 
+- `baseArchitecture`: Describes the base architecture of the Open Integration Hub
+- `issue_template`: Gives a structured template for unified future issues 
 
 
 ## Workgroup
