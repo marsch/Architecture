@@ -1,5 +1,5 @@
 # Status
-proposed
+accepted
 
 # Context
 Which architecture pattern do we use for the OIH?
@@ -9,7 +9,9 @@ Which architecture pattern do we use for the OIH?
 ## Alternative Microservice architecture
 
 ### Decision
-no decision yet
+Microservice architecture is accepted.
+To avoid too many different frameworks and products. A list of recommended products, technologies and frameworks will be created.
+On database level, some concessions can be made to reduce the amount of database instances. A strict separation between different microservices within the same database instance is mandatory.
 
 ### Consequences
 Pros:
@@ -25,7 +27,7 @@ Cons:
 ## Alternative Service oriented architecture
 
 ### Decision
-no decision yet
+The decision was made in favor of the microservice architecture.
 
 ### Consequences
 Pros:
