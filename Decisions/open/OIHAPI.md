@@ -2,8 +2,19 @@
 proposed
 
 # Context
-The communication between the connectors and the OIH uses an API. Which protocol and technology should be used?
-Requirements for the API: https://github.com/openintegrationhub/Architecture/blob/OIHAPI/OIHAPI.md
+The OIH API is the interface provided by the OIH which is used by the connectors to exchange data with the OIH.
+
+requirements for the OIH API:
+- open source based
+- catchy (well documented, intuitive, easy accessible and plausible)
+- supports bidirectional communication
+- supports a synchron request/reply interaction style
+
+brainstorming regarding protocols and technology:
+- http://www.odata.org/
+- https://en.wikipedia.org/wiki/HATEOAS
+- https://swagger.io/
+
 
 # Alternatives
 
@@ -33,9 +44,16 @@ Scalability is achieved using a load balancing infrastructure component.
 
 
 ## Alternative sdk
+The API will be implemented as a standard development kit (sdk). The technical details regarding protocol and frameworks are encapsulated in the sdk. The sdk must be well documented.
 
 ### Decision
 no decision yet
 
 ### Consequences
-A sdk will be used for the communication between connectors.
+Pros:
+- technical details like protocol and frameworks can be changed with minor impact to the clients
+
+Cons:
+- swagger is not compatible with a sdk
+- clients must use the provided sdk
+
