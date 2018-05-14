@@ -4,6 +4,8 @@
 
 The revolution in data synchronization — the Open Integration Hub enables simple data synchronization between any software applications and thus accelerates digitalisation
 
+Visit the official [Open Integration Hub homepage](https://www.openintegrationhub.de/)
+
 # Architecture
 
 ## Table of Content
