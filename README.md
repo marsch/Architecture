@@ -73,11 +73,11 @@ When looking for further information or support, please contact: philipp.hoegner
 
 |Member Name |GitHub Alias|Company| Role |
 | --- | --- | --- | --- |
-| Franz Degenhardt |[FranzDegenhardt](https://github.com/FranzDegenhardt)|| Manager  |
-| Igor Drobiazko  |[Drobiazko](https://github.com/drobiazko)|| Committer  |
-| Selim Achmerzaev |[sachmerz](https://github.com/sachmerz)|| Committer  |
-| Susanne Braun |[brausu](https://github.com/brausu)|| Committer  |
-| Lutz Ashauer |[lashauer](https://github.com/lashauer)|| Contributor  |
+| Franz Degenhardt |[FranzDegenhardt](https://github.com/FranzDegenhardt)|[X-Integrate](https://x-integrate.com/x-integrate-startseite/)| Manager  |
+| Igor Drobiazko  |[Drobiazko](https://github.com/drobiazko)|[Elastic.io](https://www.elastic.io/)| Committer  |
+| Selim Achmerzaev |[sachmerz](https://github.com/sachmerz)|[Basaas](https://www.basaas.com/app-store)| Committer  |
+| Susanne Braun |[brausu](https://github.com/brausu)|[Fraunhofer IESE](https://www.iese.fraunhofer.de/)| Committer  |
+| Lutz Ashauer |[lashauer](https://github.com/lashauer)|[StoneOne](http://stoneone.de)| Contributor  |
 
 ## Wording
 
