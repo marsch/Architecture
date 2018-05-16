@@ -32,7 +32,7 @@ In the following one exemplary integration proccess is described.
 
 The following illustrations vizualizes the integration proccess:
 
-![IntegrationProcess](Assets/OihIntegrationProcessUniDirectional.svg)
+![IntegrationProcess](Assets/OihIntegrationProcessUniDirectional.png)
 
 ## Integration Process Components
 ### Connector
