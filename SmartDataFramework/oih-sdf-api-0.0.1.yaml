@@ -24,10 +24,16 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Domain"
-  /domains/{domainId}:
+  /domains/{id}:
     get:
       summary: Retrieve a domain with given ID.
       description: Provides details of a domain with a given ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: 'Domain with given ID'
@@ -38,6 +44,12 @@ paths:
     put:
       summary: Update a domain by ID.
       description: Updates details of a domain with a given ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: 'The updated Domain'
@@ -65,10 +77,16 @@ paths:
             application/json:
               schema: 
                 $ref: "#/components/schemas/AnyModel"
-  /models/{modelId}:
+  /models/{id}:
     get:
       summary: Retrieve a model by ID.
       description: Provides details of a model with a given ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
       responses:
         '200':    # status code
           description: Model with given ID
@@ -79,6 +97,12 @@ paths:
     put:
       summary: Update a model with given ID.
       description: Updates a model with given ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
       responses:
         '200':    # status code
           description: Updated Model
@@ -120,8 +144,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WebhookSubscriptionResponse'
+  /webhooks/{id}:
     delete:
       summary: Delete an existing webhook subscrption by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
@@ -193,13 +224,6 @@ components:
             type: string
             
       WebhookSubscriptionResponse:
-        required:
-          - id
-        properties:
-          id:
-            type: string
-            
-      WebhookCancelation:
         required:
           - id
         properties:
