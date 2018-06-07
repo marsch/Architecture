@@ -1,5 +1,5 @@
 # Status
-proposed
+accepted
 
 # Context
 The OIH API is the interface provided by the OIH which is used by the connectors to exchange data with the OIH.
@@ -23,7 +23,7 @@ The main oih api will be implemented using asynchron messaging.
 Additional apis can be implemented as wrapper apis which provides additional interfaces e.g. rest/json and uses the main api.
 
 ### Decision
-no decision yet
+the decision was made in favor of rest/json
 
 ### Consequences
 Request/reply scenarios must be implemented using reply queues.
@@ -35,19 +35,19 @@ One to many communication is supported.
 The main oih api will be implemented using json/rest.
 
 ### Decision
-no decision yet
+decided on this alternative
 
 ### Consequences
 The synchron api request/response cycle must be managed (e.g. http polling, callbacks) to reduce the impact on the scalability and performance of the system.
 One to many communication is not supported.
-Scalability is achieved using a load balancing infrastructure component.
+Scalability is achieved using a load balancing infrastructure component like Kubernetes routing.
 
 
 ## Alternative sdk
 The API will be implemented as a standard development kit (sdk). The technical details regarding protocol and frameworks are encapsulated in the sdk. The sdk must be well documented.
 
 ### Decision
-no decision yet
+the decision was made in favor of rest/json
 
 ### Consequences
 Pros:
