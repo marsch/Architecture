@@ -30,8 +30,7 @@ Cons:
 The API for update propagation will be completely domain-specific. There will be extra resources for the different 
 aggregates, entities (?), value objects (?) that can be updated by the standard REST methods (POST, PUT, DELETE, PATCH).
 
-**Example: Update to single ressource:**
-Surname of a contact has changed.
+**Example: Update to single ressource** (Surname of a contact has changed)
 
 **HTTP Request:**
 
@@ -70,7 +69,7 @@ PATCH /contacts
     "securityUserUuid": "bc9c46fe-238b-11e8-b467-0ed5f89f718b",
     "securityUserRole": "some-role",
     
-    "aggregate-diff": {}
+    "contact-diff": {}
   }, 
   {
     "id": "7d2817e6-6e77-11e8-adc0-fa7ae01bbebc",
@@ -83,7 +82,7 @@ PATCH /contacts
     "securityUserUuid": "bc9c46fe-238b-11e8-b467-0ed5f89f718b",
     "securityUserRole": "some-role",
       
-    "aggregate-diff": {
+    "contact-diff": {
       "lastName": "Kuhn"
     }
   }
@@ -104,7 +103,7 @@ GET /contacts/update-events
 [
   {
     "id": "d10b642c-6e76-11e8-adc0-fa7ae01bbebc",
-    "readVersion: 100,
+    "readVersion": 100,
     "version": 101,
     
     "operationType": "delete",
@@ -114,7 +113,7 @@ GET /contacts/update-events
     "securityUserUuid": "bc9c46fe-238b-11e8-b467-0ed5f89f718b",
     "securityUserRole": "some-role",
     
-    "aggregate-diff": {},
+    "contact-diff": {},
     
     "links": [
         {
@@ -139,10 +138,11 @@ GET /contacts/update-events
     "securityUserUuid": "bc9c46fe-238b-11e8-b467-0ed5f89f718b",
     "securityUserRole": "some-role",
       
-    "aggregate-diff": {
+    "contact-diff": {
       "lastName": "Kuhn"
+    },
       
-      "links": [
+    "links": [
         {
             "rel": "self",
             "uri": "http://localhost:8080/contacts/update-events/fb3e6d75-b265-423c-9299-cdc02343b7ac"
@@ -152,10 +152,11 @@ GET /contacts/update-events
             "uri": "http://localhost:8080/contacts/7d2817e6-6e77-11e8-adc0-fa7ae01bbebc"
         }
     ]
-    }
   }
 ]
 ``` 
+
+**An alternative for submitting bulk updates could be to  directly `POST to /contacts/update-events`. This would even better correspond with the CQRS pattern.**
 
 ### Decision
 no decision yet
