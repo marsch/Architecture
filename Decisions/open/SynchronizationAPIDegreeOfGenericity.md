@@ -23,7 +23,7 @@ Pros:
 Cons:
 - Deserialization of JSON data seems to be more complex in particular if there is no object type given in the objects (this is in particular true if inheritance is supported)
 - Generic code is often much harder to implement and maintain than code that is more domain-specific
-- Unclear how conflict detection can be realized
+- Unclear how conflict detection can be realized within the smart data framework
 - Complexity of conflict handling will be shifted from framework into connector or ISV app
 
 ## Alternative "Domain-specific REST APIs for update propagation"
