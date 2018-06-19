@@ -3,9 +3,20 @@ info:
   title: OIH Smart Data Framework REST API
   description: REST API for communication with the Smart Data Framework.
   version: 0.0.1
+tags:
+  - name: domains
+    description: Operations for domains
+  - name: models
+    description: Operations for models
+  - name: data
+    description: Operations for data
+  - name: webhooks
+    description: Operations for webhooks
 paths:
   /domains:
     get:
+      tags:
+        - domains
       summary: Retrieve the available domains for the authenticated user
       responses:
         '200':
@@ -15,6 +26,8 @@ paths:
               schema:
                 $ref: "#/components/schemas/Domains"
     post:
+      tags:
+        - domains
       summary: Create a new Domain.
       description: Creates a new Domain for the authenticated user.
       parameters:  
@@ -35,6 +48,8 @@ paths:
           description: The new domain has been created successfully 
   /domains/{id}:
     get:
+      tags:
+        - domains
       summary: Retrieve a domain with given ID.
       description: Provides details of a domain with a given ID.
       parameters:
@@ -52,6 +67,8 @@ paths:
               schema:
                 $ref: "#/components/schemas/specificDomain"
     put:
+      tags:
+        - domains
       summary: Update a domain by ID.
       description: Updates details of a domain with a given ID.
       parameters:
@@ -73,9 +90,11 @@ paths:
             type: string
       responses:
         '200':
-          description: The domain has been updated successfully 
+          description: The domain has been updated successfully
   /models:
     get:
+      tags:
+        - models
       summary: Retrieve the available models for the authenticated user.
       responses:
         '200':    # status code
@@ -86,6 +105,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/ModelList'
     post:
+      tags:
+        - models
       summary: Create a new a model.
       description: Create a new model for authenticated user.
       parameters:
@@ -107,6 +128,8 @@ paths:
 
   /models/{id}:
     get:
+      tags:
+        - models
       summary: Retrieve a model by ID.
       description: Provides details of a model with a given ID.
       parameters:
@@ -124,6 +147,8 @@ paths:
               schema: 
                 $ref: "#/components/schemas/AnyModel"
     put:
+      tags:
+        - models
       summary: Update a model with given ID.
       description: Updates a model with given ID.
       parameters:
@@ -144,6 +169,8 @@ paths:
           description: Model has been updated successfully 
   /data:
     post:
+      tags:
+        - data
       summary: Send an object for persistence
       parameters:
         - in: path
@@ -164,6 +191,8 @@ paths:
           description: New data has been uploaded successfully
   /webhooks:
     post:
+      tags:
+        - webhooks
       summary: Add a new webhook to receive notifications about data changes
       requestBody:
         description: 'Webhook payload'
@@ -181,6 +210,8 @@ paths:
                 $ref: '#/components/schemas/WebhookSubscriptionResponse'
   /webhooks/{id}:
     delete:
+      tags:
+        - webhooks
       summary: Delete an existing webhook subscrption by id
       parameters:
         - in: path
