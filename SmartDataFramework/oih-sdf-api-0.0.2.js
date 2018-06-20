@@ -130,7 +130,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ModelList"
+                "$ref": "#/components/schemas/updateDomain"
               }
             }
           }
@@ -415,6 +415,23 @@
         "example": [
           {
             "id": 1,
+            "name": "Products",
+            "description": "This domain includes all product related models"
+          }
+        ]
+      },
+      "updateDomain": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "example": [
+          {
             "name": "Products",
             "description": "This domain includes all product related models"
           }
