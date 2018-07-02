@@ -48,8 +48,6 @@ When looking for further information or support, please contact: philipp.hoegner
 ## Content
 ### Folders
 - [Decisions](Decisions): Collection of all open and closed decisions regarding the architecture, including a template for further open decisions
-- [IntegrationFramework](IntegrationFramework): tbd — coming soong
-- [OrchestrationAndScheduling](OrchestrationAndScheduling): tbd — coming soon
 - [Protocols](Protocols): Collection of all workgroup protocols starting in 11-2017
 - [Roadmap](Roadmap): Contains information regarding the planned poc roadmap
 - [SmartDataFramework](SmartDataFramework): Explains the integration scenario of the SDF into the data hub
