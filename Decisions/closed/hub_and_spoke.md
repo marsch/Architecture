@@ -1,6 +1,6 @@
 
 # Status
-proposed
+accepted
 
 # Context
 Is the OIH Smart Data Framework neccessary to enable the hub and spoke communication style within the OIH?
@@ -13,7 +13,7 @@ The OIH Smart Data Framework is not neccessary to enable the hub and spoke commu
 The OIH Smart Data Framework is an optional component. The basic OIH features like hub and spoke communication style must be usable without the Data Hub.
 
 ### Decision
-no decision yet
+the decision was made in favor of Alternative 2
 
 ### Consequences
 Transformations involving a central hub might be more complex. The master data model must be compatible with the application specific data model.
@@ -22,7 +22,7 @@ Transformations involving a central hub might be more complex. The master data m
 The OIH Smart Data Framework is neccessary to enable the hub and spoke communication style within the OIH.
 
 ### Decision
-no decision yet
+the decision was made in favor of this Alternative
 
 ### Consequences
 The OIH must contain point to point transformations for all connected applications.
