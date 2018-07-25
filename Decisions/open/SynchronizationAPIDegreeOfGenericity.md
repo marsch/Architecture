@@ -13,7 +13,7 @@ The API for update propagation will be completely generic. There will be a "data
 json data (compare to https://github.com/openintegrationhub/Architecture/blob/master/SmartDataFramework/oih-sdf-api-0.0.1.yaml).
 
 ### Decision
-no decision yet
+The decision was made in favor of Alternative 1.
 
 ### Consequences
 Pros:
@@ -159,7 +159,7 @@ GET /contacts/update-events
 **An alternative for submitting bulk updates could be to  directly `POST to /contacts/update-events`. This would even better correspond with the CQRS pattern.**
 
 ### Decision
-no decision yet
+The decision was made in favor of Alternative 1.
 
 ### Consequences
 Pros:
