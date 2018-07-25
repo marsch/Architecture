@@ -1,5 +1,5 @@
 # Status
-proposed
+accepted Alternative 1
 
 # Context
 There will be a REST API provided by the Smart Data Framework that can be used by connectors of ISV apps for the
