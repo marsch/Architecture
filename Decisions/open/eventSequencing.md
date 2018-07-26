@@ -4,7 +4,8 @@ Support of event sequencing
 proposed
 
 # Context
-How is event sequencing supported in the OIH?
+Event sequencing means enforcing the sequence of events or messages to ensure that messages are process in order of arrival.
+How is event sequencing supported in the OIH? 
 
 # Alternatives
 
